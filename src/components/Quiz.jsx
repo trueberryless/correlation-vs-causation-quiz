@@ -7,9 +7,12 @@ import {
   BarChart3,
   TrendingUp,
   Globe,
+  Lightbulb,
+  Info,
 } from "lucide-react";
 import { nanoid } from "nanoid";
 import questionsData from "../data/questions.json";
+import { MAX_ATTEMPTS, MIN_CONFIDENCE, MAX_CONFIDENCE } from "../constants";
 
 const Quiz = () => {
   const { t, i18n } = useTranslation();
@@ -17,15 +20,17 @@ const Quiz = () => {
   const [step, setStep] = useState("intro");
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState([]);
-  const [confidence, setConfidence] = useState(50);
+  const [confidence, setConfidence] = useState(MIN_CONFIDENCE);
+  const [hasAdjustedSlider, setHasAdjustedSlider] = useState(false);
   const [totalEstimate, setTotalEstimate] = useState(5);
   const [questions, setQuestions] = useState([]);
   const [results, setResults] = useState(null);
-  const [attemptsLeft, setAttemptsLeft] = useState(3);
+  const [attemptsLeft, setAttemptsLeft] = useState(MAX_ATTEMPTS);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSliderHint, setShowSliderHint] = useState(false);
 
   useEffect(() => {
-    // Get or create user ID
+    // Get or create user ID (hardware-specific, persists across attempts)
     let id = localStorage.getItem("quizUserId");
     if (!id) {
       id = nanoid();
@@ -34,7 +39,9 @@ const Quiz = () => {
     setUserId(id);
 
     // Load attempts
-    const attempts = parseInt(localStorage.getItem("quizAttempts") || "3");
+    const attempts = parseInt(
+      localStorage.getItem("quizAttempts") || String(MAX_ATTEMPTS),
+    );
     setAttemptsLeft(attempts);
 
     // Select questions
@@ -58,7 +65,18 @@ const Quiz = () => {
     setQuestions(allSelected);
   };
 
+  const handleSliderChange = (value) => {
+    setConfidence(value);
+    setHasAdjustedSlider(true);
+    setShowSliderHint(false);
+  };
+
   const handleAnswer = (isCausal) => {
+    if (!hasAdjustedSlider) {
+      setShowSliderHint(true);
+      return;
+    }
+
     const question = questions[currentQ];
     const newAnswers = [
       ...answers,
@@ -72,7 +90,9 @@ const Quiz = () => {
     ];
 
     setAnswers(newAnswers);
-    setConfidence(50);
+    setConfidence(MIN_CONFIDENCE);
+    setHasAdjustedSlider(false);
+    setShowSliderHint(false);
 
     if (currentQ < questions.length - 1) {
       setCurrentQ(currentQ + 1);
@@ -88,8 +108,7 @@ const Quiz = () => {
     const avgConf =
       answers.reduce((sum, a) => sum + a.confidence, 0) / answers.length;
 
-    const quizResults = {
-      userId,
+    const quizResult = {
       timestamp: new Date().toISOString(),
       correct,
       total: questions.length,
@@ -103,145 +122,52 @@ const Quiz = () => {
       })),
     };
 
-    setResults(quizResults);
+    setResults(quizResult);
 
     // Save to localStorage
-    const allResults = JSON.parse(localStorage.getItem("quizResults") || "[]");
-    allResults.push(quizResults);
-    localStorage.setItem("quizResults", JSON.stringify(allResults));
+    const userResults = JSON.parse(
+      localStorage.getItem(`quizResults_${userId}`) || "[]",
+    );
+    userResults.push(quizResult);
+    localStorage.setItem(`quizResults_${userId}`, JSON.stringify(userResults));
 
     // Update attempts
     const newAttempts = attemptsLeft - 1;
     setAttemptsLeft(newAttempts);
     localStorage.setItem("quizAttempts", newAttempts.toString());
 
-    // Submit to GitHub
+    // Submit to server
     try {
-      await submitToGitHub(quizResults);
+      const response = await fetch("/api/submit-results", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userId,
+          results: [quizResult],
+        }),
+      });
+
+      const data = await response.json();
+      if (!data.success) {
+        console.warn("Failed to submit to GitHub:", data.error);
+      }
     } catch (error) {
-      console.error("Error submitting to GitHub:", error);
+      console.error("Error submitting to server:", error);
     }
 
     setIsSubmitting(false);
     setStep("results");
   };
 
-  const submitToGitHub = async (data) => {
-    const GITHUB_TOKEN = import.meta.env.PUBLIC_GITHUB_TOKEN;
-    const REPO_OWNER = "trueberryless";
-    const REPO_NAME = "correlation-vs-causation-quiz";
-
-    if (!GITHUB_TOKEN) {
-      console.warn("No GitHub token found");
-      return;
-    }
-
-    try {
-      // Get current results file
-      const getFileResponse = await fetch(
-        `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/results.json`,
-        {
-          headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
-            Accept: "application/vnd.github.v3+json",
-          },
-        },
-      );
-
-      let currentResults = [];
-      let sha = null;
-
-      if (getFileResponse.ok) {
-        const fileData = await getFileResponse.json();
-        sha = fileData.sha;
-        const content = atob(fileData.content);
-        currentResults = JSON.parse(content);
-      }
-
-      // Add new result
-      currentResults.push(data);
-
-      // Create branch and PR
-      const branchName = `quiz-result-${data.userId}-${Date.now()}`;
-
-      // Get main branch SHA
-      const mainBranch = await fetch(
-        `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/refs/heads/main`,
-        {
-          headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
-            Accept: "application/vnd.github.v3+json",
-          },
-        },
-      );
-      const mainData = await mainBranch.json();
-      const mainSha = mainData.object.sha;
-
-      // Create new branch
-      await fetch(
-        `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/git/refs`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
-            "Content-Type": "application/json",
-            Accept: "application/vnd.github.v3+json",
-          },
-          body: JSON.stringify({
-            ref: `refs/heads/${branchName}`,
-            sha: mainSha,
-          }),
-        },
-      );
-
-      // Update file in new branch
-      await fetch(
-        `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/results.json`,
-        {
-          method: "PUT",
-          headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
-            "Content-Type": "application/json",
-            Accept: "application/vnd.github.v3+json",
-          },
-          body: JSON.stringify({
-            message: `Add quiz result from user ${data.userId.slice(0, 8)}`,
-            content: btoa(JSON.stringify(currentResults, null, 2)),
-            sha: sha,
-            branch: branchName,
-          }),
-        },
-      );
-
-      // Create PR
-      await fetch(
-        `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/pulls`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `token ${GITHUB_TOKEN}`,
-            "Content-Type": "application/json",
-            Accept: "application/vnd.github.v3+json",
-          },
-          body: JSON.stringify({
-            title: `Quiz Result: ${data.correct}/${data.total} correct (${data.percentage.toFixed(1)}%)`,
-            body: `Automated quiz result submission\n\nScore: ${data.correct}/${data.total}\nConfidence: ${data.avgConfidence.toFixed(1)}%\nEstimate: ${data.estimate}`,
-            head: branchName,
-            base: "main",
-          }),
-        },
-      );
-    } catch (error) {
-      console.error("GitHub submission error:", error);
-      throw error;
-    }
-  };
-
   const resetQuiz = () => {
     setStep("intro");
     setCurrentQ(0);
     setAnswers([]);
-    setConfidence(50);
+    setConfidence(MIN_CONFIDENCE);
+    setHasAdjustedSlider(false);
+    setShowSliderHint(false);
     setTotalEstimate(5);
     setResults(null);
     selectQuestions();
@@ -278,6 +204,44 @@ const Quiz = () => {
             >
               {t("subtitle")}
             </p>
+
+            {/* Educational Section */}
+            <div
+              className="bg-blue-800/40 backdrop-blur-lg rounded-2xl p-8 border border-blue-500/30 shadow-2xl animate-fade-in text-left"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <div className="flex items-start gap-4">
+                <Lightbulb className="w-10 h-10 text-yellow-400 flex-shrink-0 mt-1" />
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-blue-200">
+                    {t("whatIsTheDifference")}
+                  </h3>
+                  <p className="text-lg leading-relaxed text-blue-100">
+                    {t("correlationExplanation")}
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4 mt-4">
+                    <div className="bg-red-500/20 rounded-xl p-4 border border-red-500/30">
+                      <h4 className="font-bold text-red-200 mb-2 flex items-center gap-2">
+                        <XCircle className="w-5 h-5" />
+                        {t("correlationTitle")}
+                      </h4>
+                      <p className="text-sm text-red-100">
+                        {t("correlationExample")}
+                      </p>
+                    </div>
+                    <div className="bg-green-500/20 rounded-xl p-4 border border-green-500/30">
+                      <h4 className="font-bold text-green-200 mb-2 flex items-center gap-2">
+                        <CheckCircle2 className="w-5 h-5" />
+                        {t("causalityTitle")}
+                      </h4>
+                      <p className="text-sm text-green-100">
+                        {t("causalityExample")}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div
               className="bg-purple-800/40 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/30 shadow-2xl animate-fade-in"
@@ -345,7 +309,48 @@ const Quiz = () => {
                 {questions[currentQ].statement[i18n.language]}
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+              {/* Confidence Slider - MOVED BEFORE BUTTONS */}
+              <div className="mb-8 space-y-6 bg-purple-900/40 rounded-2xl p-6 border-2 border-purple-500/50">
+                <div className="flex items-center gap-3">
+                  <Info className="w-6 h-6 text-purple-300" />
+                  <label className="block text-xl font-semibold">
+                    {t("confidenceQuestion")}
+                  </label>
+                </div>
+                <input
+                  type="range"
+                  min={MIN_CONFIDENCE}
+                  max={MAX_CONFIDENCE}
+                  value={confidence}
+                  onChange={(e) => handleSliderChange(parseInt(e.target.value))}
+                  className="w-full h-4 bg-purple-700 rounded-lg appearance-none cursor-pointer slider"
+                />
+                <div className="text-center">
+                  <div
+                    className={`text-5xl font-bold transition-all ${hasAdjustedSlider ? "text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400" : "text-purple-500"}`}
+                  >
+                    {confidence}%
+                  </div>
+                  {!hasAdjustedSlider && (
+                    <p className="text-purple-300 mt-2 animate-pulse">
+                      {t("adjustSliderFirst")}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {showSliderHint && (
+                <div className="mb-6 bg-yellow-500/20 border-2 border-yellow-500 rounded-xl p-4 animate-fade-in">
+                  <div className="flex items-center gap-3">
+                    <AlertCircle className="w-6 h-6 text-yellow-400 animate-bounce" />
+                    <p className="text-yellow-100 font-semibold">
+                      {t("pleaseAdjustSlider")}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <button
                   onClick={() => handleAnswer(true)}
                   className="group bg-gradient-to-br from-green-600 to-green-700 p-8 rounded-2xl hover:scale-105 hover:shadow-2xl hover:shadow-green-500/30 transform transition-all duration-300"
@@ -371,25 +376,6 @@ const Quiz = () => {
                     {t("falseStatement")}
                   </div>
                 </button>
-              </div>
-
-              <div className="space-y-6 bg-purple-900/40 rounded-2xl p-6">
-                <label className="block text-xl font-semibold">
-                  {t("confidenceQuestion")}
-                </label>
-                <input
-                  type="range"
-                  min="50"
-                  max="100"
-                  value={confidence}
-                  onChange={(e) => setConfidence(parseInt(e.target.value))}
-                  className="w-full h-4 bg-purple-700 rounded-lg appearance-none cursor-pointer slider"
-                />
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
-                    {confidence}%
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -486,6 +472,7 @@ const Quiz = () => {
               </div>
 
               <div className="bg-gradient-to-br from-purple-600/40 to-purple-700/40 backdrop-blur-lg rounded-3xl p-10 border border-purple-500/30 shadow-2xl hover:scale-105 transition-transform">
+                {" "}
                 <Globe className="w-20 h-20 mx-auto mb-6 animate-pulse" />
                 <div className="text-7xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-br from-purple-300 to-purple-100">
                   {results.estimate}

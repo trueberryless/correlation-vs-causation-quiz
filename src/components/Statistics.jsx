@@ -13,25 +13,27 @@ const Statistics = () => {
 
   const loadStatistics = async () => {
     try {
-      // Try to fetch from GitHub
-      const response = await fetch(
-        "https://raw.githubusercontent.com/trueberryless/correlation-vs-causation-quiz/main/results.json",
-      );
+      // Fetch from server API
+      const response = await fetch("/api/get-stats");
 
       if (response.ok) {
         const data = await response.json();
         calculateStats(data);
       } else {
         // Fallback to localStorage
+        const userId = localStorage.getItem("quizUserId");
         const localData = JSON.parse(
-          localStorage.getItem("quizResults") || "[]",
+          localStorage.getItem(`quizResults_${userId}`) || "[]",
         );
         calculateStats(localData);
       }
     } catch (error) {
       console.error("Error loading statistics:", error);
       // Fallback to localStorage
-      const localData = JSON.parse(localStorage.getItem("quizResults") || "[]");
+      const userId = localStorage.getItem("quizUserId");
+      const localData = JSON.parse(
+        localStorage.getItem(`quizResults_${userId}`) || "[]",
+      );
       calculateStats(localData);
     } finally {
       setLoading(false);
@@ -42,6 +44,7 @@ const Statistics = () => {
     if (!data || data.length === 0) {
       setStats({
         totalParticipants: 0,
+        totalAttempts: 0,
         averageScore: 0,
         averageConfidence: 0,
         scoreDistribution: Array(11).fill(0),
@@ -49,7 +52,8 @@ const Statistics = () => {
       return;
     }
 
-    const totalParticipants = data.length;
+    // Count unique users (if we have userId field) or just count attempts
+    const totalAttempts = data.length;
     const totalScore = data.reduce((sum, r) => sum + r.percentage, 0);
     const totalConfidence = data.reduce((sum, r) => sum + r.avgConfidence, 0);
 
@@ -60,9 +64,10 @@ const Statistics = () => {
     });
 
     setStats({
-      totalParticipants,
-      averageScore: totalScore / totalParticipants,
-      averageConfidence: totalConfidence / totalParticipants,
+      totalParticipants: totalAttempts, // In reality this is attempts, not unique users
+      totalAttempts,
+      averageScore: totalScore / totalAttempts,
+      averageConfidence: totalConfidence / totalAttempts,
       scoreDistribution,
     });
   };
@@ -103,16 +108,16 @@ const Statistics = () => {
           <p className="text-2xl text-purple-200">Global Quiz Results</p>
         </div>
 
-        {stats && stats.totalParticipants > 0 ? (
+        {stats && stats.totalAttempts > 0 ? (
           <div className="space-y-8 animate-fade-in">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-gradient-to-br from-purple-600/40 to-purple-700/40 backdrop-blur-lg rounded-3xl p-8 border border-purple-500/30 shadow-2xl">
                 <Users className="w-16 h-16 mx-auto mb-4 text-purple-300" />
                 <div className="text-5xl font-bold mb-2">
-                  {stats.totalParticipants}
+                  {stats.totalAttempts}
                 </div>
                 <div className="text-xl text-purple-200">
-                  {t("totalParticipants")}
+                  {t("totalAttempts")}
                 </div>
               </div>
 
@@ -146,8 +151,8 @@ const Statistics = () => {
               <div className="space-y-3">
                 {stats.scoreDistribution.map((count, score) => {
                   const percentage =
-                    stats.totalParticipants > 0
-                      ? (count / stats.totalParticipants) * 100
+                    stats.totalAttempts > 0
+                      ? (count / stats.totalAttempts) * 100
                       : 0;
 
                   return (
