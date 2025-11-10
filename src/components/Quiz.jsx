@@ -450,7 +450,7 @@ const Quiz = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-gradient-to-br from-green-600/40 to-green-700/40 backdrop-blur-lg rounded-3xl p-10 border border-green-500/30 shadow-2xl hover:scale-105 transition-transform">
                 <BarChart3 className="w-20 h-20 mx-auto mb-6 animate-pulse" />
-                <div className="text-7xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-br from-green-300 to-green-100">
+                <div className="text-6xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-br from-green-300 to-green-100">
                   {results.percentage.toFixed(1)}%
                 </div>
                 <div className="text-2xl font-semibold mb-2">
@@ -463,7 +463,7 @@ const Quiz = () => {
 
               <div className="bg-gradient-to-br from-blue-600/40 to-blue-700/40 backdrop-blur-lg rounded-3xl p-10 border border-blue-500/30 shadow-2xl hover:scale-105 transition-transform">
                 <TrendingUp className="w-20 h-20 mx-auto mb-6 animate-pulse" />
-                <div className="text-7xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-blue-100">
+                <div className="text-6xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-blue-100">
                   {results.avgConfidence.toFixed(1)}%
                 </div>
                 <div className="text-2xl font-semibold">
@@ -474,7 +474,7 @@ const Quiz = () => {
               <div className="bg-gradient-to-br from-purple-600/40 to-purple-700/40 backdrop-blur-lg rounded-3xl p-10 border border-purple-500/30 shadow-2xl hover:scale-105 transition-transform">
                 {" "}
                 <Globe className="w-20 h-20 mx-auto mb-6 animate-pulse" />
-                <div className="text-7xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-br from-purple-300 to-purple-100">
+                <div className="text-6xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-br from-purple-300 to-purple-100">
                   {results.estimate}
                 </div>
                 <div className="text-2xl font-semibold mb-2">

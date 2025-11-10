@@ -7,8 +7,8 @@
       "en": "In cities with high organic food purchase, school grades are better."
     },
     "explanation": {
-      "de": "Scheint plausibel (gesunde Ernährung → bessere Konzentration), ist aber meist ein Sozioökonomik-Konfundierer: wohlhabendere und besser gebildete Familien kaufen häufiger Bio und können zudem mehr Bildungsressourcen bereitstellen. Daher korreliert Bio-Kauf mit Noten, verursacht sie aber nicht direkt.",
-      "en": "It sounds plausible (healthy diet → better concentration), but usually it’s a socio-economic confounder: wealthier and better educated families buy organic more often and also provide more educational resources. Thus, organic purchasing correlates with grades, but does not directly cause them."
+      "de": "Sozioökonomischer Konfundierer: Wohlhabendere Familien kaufen häufiger Bio und bieten mehr Bildungsressourcen.",
+      "en": "Socio-economic confounder: Wealthier families buy organic more often and provide more educational resources."
     },
     "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0069778"
   },
@@ -16,25 +16,25 @@
     "id": 2,
     "is_causal": false,
     "statement": {
-      "de": "Klassen mit vielen Smartphones führen dazu, dass Schüler schlechter schlafen.",
-      "en": "Classes with many smartphones lead to students sleeping worse."
+      "de": "Menschen mit niedrigem Vitamin-D-Spiegel haben häufiger Depressionen.",
+      "en": "People with low vitamin D levels are more often depressed."
     },
     "explanation": {
-      "de": "Es gibt eine Assoziation zwischen Smartphone-Nutzung und Schlafproblemen — aber Richtung und Drittvariablen sind wichtig: Jugendliche mit Schlafproblemen nutzen nachts eher Geräte (Reverse Causality) und Stress/Prüfungsdruck kann beides verursachen. Beobachtungsdaten allein reichen nicht für Kausalität.",
-      "en": "There is an association between smartphone use and sleep problems — but direction and third-variables matter: Youth with sleep problems use devices at night more often (reverse causality), and stress/exam pressure may cause both. Observational data alone is insufficient for causality."
+      "de": "Assoziation vorhanden, aber Richtung unklar: Depressive gehen seltener raus (Reverse Causality). Mendelian Randomization-Studien zeigen wenig kausale Evidenz.",
+      "en": "Association present, but direction unclear: Depressed people go outside less (reverse causality). Mendelian randomization studies show little causal evidence."
     },
-    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10123719/"
+    "source_url": "https://www.nature.com/articles/s41398-021-01674-3"
   },
   {
     "id": 3,
     "is_causal": false,
     "statement": {
       "de": "Je mehr Feuerwehrleute an einem Brand eingesetzt sind, desto größer der Sachschaden.",
-      "en": "The more firefighters are deployed to a fire, the larger the damage."
+      "en": "The more firefighters deployed to a fire, the larger the damage."
     },
     "explanation": {
-      "de": "Positive Korrelation, aber die Schwere des Feuers verursacht beides: große Brände brauchen mehr Einsatzkräfte und verursachen mehr Schaden. Anzahl der Feuerwehrleute ist ein Marker, kein Verursacher.",
-      "en": "Positive correlation, but the severity of the fire causes both: big fires require more personnel and cause more damage. The number of firefighters is a marker, not the cause."
+      "de": "Die Schwere des Feuers verursacht beides: große Brände brauchen mehr Einsatzkräfte und verursachen mehr Schaden.",
+      "en": "The severity of the fire causes both: big fires require more personnel and cause more damage."
     },
     "source_url": "https://lup.lub.lu.se/student-papers/record/9041395/file/9041396.pdf"
   },
@@ -46,8 +46,8 @@
       "en": "Places with more bicycle helmet sales have more head injuries."
     },
     "explanation": {
-      "de": "Das ist ein typisches Scheinkorrelation-Argument: Regionen mit hohem Radverkehr haben mehr Unfälle und gleichzeitig mehr Helmverkäufe. Helmverkäufe markieren Rad-Dichte; sie verursachen die Verletzungsrate nicht.",
-      "en": "That is a typical case of spurious correlation: Regions with high bicycle traffic have more accidents and at the same time more helmet purchases. Helmet sales mark cycling density; they do not cause injury rates."
+      "de": "Regionen mit hohem Radverkehr haben mehr Unfälle und mehr Helmverkäufe. Helmverkäufe markieren Rad-Dichte.",
+      "en": "Regions with high bicycle traffic have more accidents and more helmet purchases. Helmet sales mark cycling density."
     },
     "source_url": "https://www.cochrane.org/evidence/CD005401_bicycle-helmet-legislation-uptake-helmet-use-and-prevention-head-injuries"
   },
@@ -55,12 +55,12 @@
     "id": 5,
     "is_causal": false,
     "statement": {
-      "de": "Schulen mit mehr Schulsozialarbeitern haben höhere Melderaten von Mobbing, also mehr Mobbing.",
-      "en": "Schools with more school social workers have higher reported rates of bullying, so more bullying."
+      "de": "Schulen mit mehr Schulsozialarbeitern haben höhere Melderaten von Mobbing.",
+      "en": "Schools with more school social workers have higher reported rates of bullying."
     },
     "explanation": {
-      "de": "Mehr Sozialarbeitende führen oft zu besserer Erkennung und Meldung (Detection bias). Schulen mit größeren sozialen Problemen stellen mehr Sozialarbeiter ein; die erhöhte Rate kann also Melde- statt Inzidenz-Effekt sein.",
-      "en": "Having more social workers often leads to better detection and reporting (detection bias). Schools with more social problems hire more social workers — the increased rate may therefore reflect reporting rather than incidence."
+      "de": "Detection Bias: Mehr Sozialarbeiter führen zu besserer Erkennung und Meldung, nicht zu mehr Mobbing.",
+      "en": "Detection bias: More social workers lead to better detection and reporting, not more bullying."
     },
     "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/hpja.680"
   },
@@ -72,8 +72,8 @@
       "en": "The more ice cream sold, the more drowning cases occur."
     },
     "explanation": {
-      "de": "Beide Variablen steigen im Sommer. Die gemeinsame Ursache ist Temperatur/Saison; Eisverkauf verursacht nicht Ertrinken.",
-      "en": "Both variables increase in summer. The common cause is temperature/season; ice cream sales do not cause drowning."
+      "de": "Beide steigen im Sommer. Die gemeinsame Ursache ist Temperatur/Saison.",
+      "en": "Both increase in summer. The common cause is temperature/season."
     },
     "source_url": "https://andreasrmadsen.medium.com/a-story-of-ice-cream-drowning-and-causal-modelling-fff3967f7671"
   },
@@ -81,12 +81,12 @@
     "id": 7,
     "is_causal": false,
     "statement": {
-      "de": "Länder mit höherem Schokoladenverbrauch haben mehr Nobelpreisträger, also macht Schokolade schlauer.",
-      "en": "Countries with higher chocolate consumption have more Nobel laureates, so chocolate makes you smarter."
+      "de": "Länder mit höherem Schokoladenverbrauch haben mehr Nobelpreisträger.",
+      "en": "Countries with higher chocolate consumption have more Nobel laureates."
     },
     "explanation": {
-      "de": "Beide hängen mit Wohlstand und Forschungskapazität zusammen. Schokoladenkonsum verursacht keine Nobelpreise.",
-      "en": "Both are linked to prosperity and research capacity. Chocolate consumption doesn’t cause Nobel prizes."
+      "de": "Beide hängen mit Wohlstand und Forschungskapazität zusammen.",
+      "en": "Both are linked to prosperity and research capacity."
     },
     "source_url": "https://www.nejm.org/doi/abs/10.1056/NEJMon1211064"
   },
@@ -98,8 +98,8 @@
       "en": "Larger shoe sizes are associated with better reading ability."
     },
     "explanation": {
-      "de": "Alter ist der versteckte Faktor: ältere Kinder haben größere Füße und lesen besser. Schuhgröße verursacht keine Lesefähigkeit.",
-      "en": "Age is the hidden factor: older children have bigger feet and read better. Shoe size doesn’t cause reading ability."
+      "de": "Alter ist der versteckte Faktor: ältere Kinder haben größere Füße und lesen besser.",
+      "en": "Age is the hidden factor: older children have bigger feet and read better."
     },
     "source_url": "https://web.ma.utexas.edu/users/mks/statmistakes/causality.html"
   },
@@ -111,7 +111,7 @@
       "en": "Places with more churches have more crime."
     },
     "explanation": {
-      "de": "Größere Städte haben mehr Kirchen und auch mehr Straftaten – die Bevölkerungsgröße ist der versteckte Faktor.",
+      "de": "Größere Städte haben mehr Kirchen und mehr Straftaten – die Bevölkerungsgröße ist der Konfundierer.",
       "en": "Larger cities have more churches and more crimes – population size is the confounder."
     },
     "source_url": "https://en.wikipedia.org/wiki/Misuse_of_statistics"
@@ -131,132 +131,1172 @@
   },
   {
     "id": 11,
-    "is_causal": true,
+    "is_causal": false,
     "statement": {
-      "de": "Infektion mit Helicobacter pylori verursacht Magengeschwüre und erhöht das Magenkrebsrisiko.",
-      "en": "Infection with Helicobacter pylori causes stomach ulcers and increases stomach cancer risk."
+      "de": "Höherer Kaffeekonsum korreliert mit geringerem Alzheimer-Risiko.",
+      "en": "Higher coffee consumption correlates with lower Alzheimer's risk."
     },
     "explanation": {
-      "de": "Die Entdeckung von H. pylori zeigte, dass Bakterien Magengeschwüre verursachen können. Antibiotische Behandlung senkt Rückfälle.",
-      "en": "The discovery of H. pylori showed that bacteria can cause ulcers. Antibiotic treatment reduces relapses."
+      "de": "Gesündere Menschen trinken mehr Kaffee (Reverse Causality). Genetische Faktoren beeinflussen beides.",
+      "en": "Healthier people drink more coffee (reverse causality). Genetic factors influence both."
     },
-    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736%2884%2991816-6/fulltext"
+    "source_url": "https://www.bmj.com/content/372/bmj.n352"
   },
   {
     "id": 12,
+    "is_causal": false,
+    "statement": {
+      "de": "Länder mit höheren Bildungsausgaben haben mehr Selbstmorde.",
+      "en": "Countries with higher education spending have more suicides."
+    },
+    "explanation": {
+      "de": "Wohlhabendere Länder geben mehr für Bildung aus und haben bessere Suizid-Meldesysteme (bessere Erfassung).",
+      "en": "Wealthier countries spend more on education and have better suicide reporting systems (better detection)."
+    },
+    "source_url": "https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(16)30030-X/fulltext"
+  },
+  {
+    "id": 13,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen die mehr Vitamine nehmen, leben länger.",
+      "en": "People who take more vitamins live longer."
+    },
+    "explanation": {
+      "de": "Gesundheitsbewusste Menschen nehmen Vitamine und haben insgesamt gesündere Lebensstile (Konfundierer).",
+      "en": "Health-conscious people take vitamins and have overall healthier lifestyles (confounder)."
+    },
+    "source_url": "https://www.bmj.com/content/346/bmj.f10"
+  },
+  {
+    "id": 14,
+    "is_causal": false,
+    "statement": {
+      "de": "Haushalte mit mehr Büchern haben intelligentere Kinder.",
+      "en": "Households with more books have smarter children."
+    },
+    "explanation": {
+      "de": "Bildungsniveau der Eltern beeinflusst beides: Bucherwerb und kognitive Förderung der Kinder.",
+      "en": "Parents' education level influences both: book acquisition and cognitive support of children."
+    },
+    "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S0160289618300552"
+  },
+  {
+    "id": 15,
+    "is_causal": false,
+    "statement": {
+      "de": "Höhere Smartphone-Nutzung führt zu schlechteren Noten.",
+      "en": "Higher smartphone use leads to worse grades."
+    },
+    "explanation": {
+      "de": "Schüler mit Lernproblemen nutzen Smartphones als Ablenkung (Reverse Causality). Selbstkontrolle ist der eigentliche Faktor.",
+      "en": "Students with learning problems use smartphones as distraction (reverse causality). Self-control is the actual factor."
+    },
+    "source_url": "https://www.nature.com/articles/s41539-021-00108-6"
+  },
+  {
+    "id": 16,
+    "is_causal": false,
+    "statement": {
+      "de": "Städte mit mehr Bibliotheken haben höhere Kriminalitätsraten.",
+      "en": "Cities with more libraries have higher crime rates."
+    },
+    "explanation": {
+      "de": "Größere Städte haben mehr von beidem. Stadtgröße ist der Konfundierer.",
+      "en": "Larger cities have more of both. City size is the confounder."
+    },
+    "source_url": "https://www.bjs.gov/index.cfm?ty=pbdetail&iid=5137"
+  },
+  {
+    "id": 17,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen die täglich frühstücken sind schlanker.",
+      "en": "People who eat breakfast daily are slimmer."
+    },
+    "explanation": {
+      "de": "Menschen mit gesünderem Lebensstil frühstücken eher. RCTs zeigen: Frühstück selbst verursacht keine Gewichtsabnahme.",
+      "en": "People with healthier lifestyles are more likely to eat breakfast. RCTs show: Breakfast itself doesn't cause weight loss."
+    },
+    "source_url": "https://www.bmj.com/content/364/bmj.l42"
+  },
+  {
+    "id": 18,
+    "is_causal": false,
+    "statement": {
+      "de": "Kinder die Musikunterricht haben, sind besser in Mathematik.",
+      "en": "Children who have music lessons are better at math."
+    },
+    "explanation": {
+      "de": "Eltern mit höherem Bildungsniveau und Einkommen ermöglichen beides: Musikunterricht und Nachhilfe.",
+      "en": "Parents with higher education and income enable both: music lessons and tutoring."
+    },
+    "source_url": "https://journals.sagepub.com/doi/10.1177/0305735613494380"
+  },
+  {
+    "id": 19,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen die mehr schlafen, sind produktiver.",
+      "en": "People who sleep more are more productive."
+    },
+    "explanation": {
+      "de": "Menschen ohne Stress schlafen mehr und sind produktiver. Stress ist der gemeinsame Faktor.",
+      "en": "People without stress sleep more and are more productive. Stress is the common factor."
+    },
+    "source_url": "https://www.sleephealthjournal.org/article/S2352-7218(15)00015-7/fulltext"
+  },
+  {
+    "id": 20,
+    "is_causal": false,
+    "statement": {
+      "de": "Häufigeres Händewaschen korreliert mit mehr Hautproblemen.",
+      "en": "More frequent handwashing correlates with more skin problems."
+    },
+    "explanation": {
+      "de": "Menschen mit Hautproblemen waschen Hände häufiger aus hygienischen Gründen (Reverse Causality).",
+      "en": "People with skin problems wash hands more frequently for hygienic reasons (reverse causality)."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7114748/"
+  },
+  {
+    "id": 21,
+    "is_causal": false,
+    "statement": {
+      "de": "Fernsehkonsum führt zu Übergewicht bei Kindern.",
+      "en": "TV watching leads to obesity in children."
+    },
+    "explanation": {
+      "de": "Familien mit niedrigerem Bildungsniveau haben höheren TV-Konsum und ungesündere Ernährung. Bildung ist der Konfundierer.",
+      "en": "Families with lower education have higher TV consumption and unhealthier diet. Education is the confounder."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3538492/"
+  },
+  {
+    "id": 22,
+    "is_causal": false,
+    "statement": {
+      "de": "Regionen mit höherer Sonneneinstrahlung haben mehr Hautkrebs-Diagnosen.",
+      "en": "Regions with higher sun exposure have more skin cancer diagnoses."
+    },
+    "explanation": {
+      "de": "Wohlhabendere sonnenreiche Regionen haben bessere medizinische Versorgung und mehr Diagnosen (Detection Bias).",
+      "en": "Wealthier sunny regions have better medical care and more diagnoses (detection bias)."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6535174/"
+  },
+  {
+    "id": 23,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen mit mehr Freunden auf Social Media sind einsamer.",
+      "en": "People with more friends on social media are lonelier."
+    },
+    "explanation": {
+      "de": "Einsame Menschen kompensieren durch mehr Online-Freunde (Reverse Causality).",
+      "en": "Lonely people compensate through more online friends (reverse causality)."
+    },
+    "source_url": "https://guilfordjournals.com/doi/10.1521/jscp.2018.37.10.751"
+  },
+  {
+    "id": 24,
+    "is_causal": false,
+    "statement": {
+      "de": "Höhere Luftfeuchtigkeit führt zu mehr Erkältungen.",
+      "en": "Higher humidity leads to more colds."
+    },
+    "explanation": {
+      "de": "Im Winter (niedrige Luftfeuchtigkeit drinnen) sind mehr Menschen in Innenräumen → mehr Ansteckung.",
+      "en": "In winter (low humidity indoors) more people are indoors → more transmission."
+    },
+    "source_url": "https://www.pnas.org/doi/10.1073/pnas.1815679116"
+  },
+  {
+    "id": 25,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen die Multivitamine nehmen, haben weniger Herzinfarkte.",
+      "en": "People who take multivitamins have fewer heart attacks."
+    },
+    "explanation": {
+      "de": "RCTs zeigen keinen Effekt. Gesundheitsbewusste Menschen nehmen Vitamine und leben generell gesünder.",
+      "en": "RCTs show no effect. Health-conscious people take vitamins and generally live healthier."
+    },
+    "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1906589"
+  },
+  {
+    "id": 26,
+    "is_causal": false,
+    "statement": {
+      "de": "Vegetarier haben niedrigere Krebsraten.",
+      "en": "Vegetarians have lower cancer rates."
+    },
+    "explanation": {
+      "de": "Vegetarier haben insgesamt gesündere Lebensstile, treiben mehr Sport, rauchen weniger (multiple Konfundierer).",
+      "en": "Vegetarians have overall healthier lifestyles, exercise more, smoke less (multiple confounders)."
+    },
+    "source_url": "https://www.bmj.com/content/366/bmj.l4137"
+  },
+  {
+    "id": 27,
+    "is_causal": false,
+    "statement": {
+      "de": "Häufigere Arztbesuche bedeuten schlechtere Gesundheit.",
+      "en": "More frequent doctor visits mean worse health."
+    },
+    "explanation": {
+      "de": "Kranke Menschen gehen häufiger zum Arzt (Reverse Causality).",
+      "en": "Sick people go to the doctor more often (reverse causality)."
+    },
+    "source_url": "https://www.healthaffairs.org/doi/10.1377/hlthaff.2015.1281"
+  },
+  {
+    "id": 28,
+    "is_causal": false,
+    "statement": {
+      "de": "Höherer IQ führt zu mehr Kurzsichtigkeit.",
+      "en": "Higher IQ leads to more myopia."
+    },
+    "explanation": {
+      "de": "Mehr Lesen und Bildschirmzeit (verursacht durch Bildungssystem) führt zu beidem: höherem IQ-Test-Erfolg und Kurzsichtigkeit.",
+      "en": "More reading and screen time (caused by education system) leads to both: higher IQ test success and myopia."
+    },
+    "source_url": "https://www.nature.com/articles/s41467-018-04399-5"
+  },
+  {
+    "id": 29,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen die oft spazieren gehen, leben länger.",
+      "en": "People who walk frequently live longer."
+    },
+    "explanation": {
+      "de": "Gesunde Menschen können spazieren gehen. Krankheit reduziert Mobilität (Reverse Causality).",
+      "en": "Healthy people can go walking. Illness reduces mobility (reverse causality)."
+    },
+    "source_url": "https://www.bmj.com/content/358/bmj.j3857"
+  },
+  {
+    "id": 30,
+    "is_causal": false,
+    "statement": {
+      "de": "Regionen mit mehr Fitnessstudios haben gesündere Bevölkerung.",
+      "en": "Regions with more gyms have healthier populations."
+    },
+    "explanation": {
+      "de": "Wohlhabendere Regionen haben mehr Fitnessstudios und besseren Zugang zu Gesundheitsversorgung.",
+      "en": "Wealthier regions have more gyms and better access to healthcare."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6073269/"
+  },
+  {
+    "id": 31,
+    "is_causal": false,
+    "statement": {
+      "de": "Höhere Bildschirmzeit verursacht ADHS-Symptome.",
+      "en": "Higher screen time causes ADHD symptoms."
+    },
+    "explanation": {
+      "de": "Kinder mit ADHS nutzen Bildschirme als Stimulation (Reverse Causality). Selbstregulation ist der eigentliche Faktor.",
+      "en": "Children with ADHD use screens for stimulation (reverse causality). Self-regulation is the actual factor."
+    },
+    "source_url": "https://jamanetwork.com/journals/jama/fullarticle/2687861"
+  },
+  {
+    "id": 32,
+    "is_causal": false,
+    "statement": {
+      "de": "Regionen mit mehr Radwegen haben mehr Fahrradunfälle.",
+      "en": "Regions with more bike lanes have more bicycle accidents."
+    },
+    "explanation": {
+      "de": "Mehr Radwege führen zu mehr Radfahrern, daher mehr absolute Unfälle. Pro Radfahrer sind sie sicherer.",
+      "en": "More bike lanes lead to more cyclists, therefore more absolute accidents. Per cyclist they are safer."
+    },
+    "source_url": "https://injuryprevention.bmj.com/content/18/1/47"
+  },
+  {
+    "id": 33,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen die mehr Wasser trinken, sind gesünder.",
+      "en": "People who drink more water are healthier."
+    },
+    "explanation": {
+      "de": "Gesundheitsbewusste Menschen trinken mehr Wasser und haben insgesamt gesündere Gewohnheiten.",
+      "en": "Health-conscious people drink more water and have overall healthier habits."
+    },
+    "source_url": "https://www.bmj.com/content/378/bmj-2022-071103"
+  },
+  {
+    "id": 34,
+    "is_causal": false,
+    "statement": {
+      "de": "Höherer Weinkonsum führt zu besserem Herz-Kreislauf-System.",
+      "en": "Higher wine consumption leads to better cardiovascular health."
+    },
+    "explanation": {
+      "de": "Wohlhabendere, gebildetere Menschen trinken mehr Wein und haben besseren Lebensstil und Gesundheitsversorgung.",
+      "en": "Wealthier, more educated people drink more wine and have better lifestyle and healthcare."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)30134-X/fulltext"
+  },
+  {
+    "id": 35,
+    "is_causal": false,
+    "statement": {
+      "de": "Kinder die früher sprechen, werden intelligenter.",
+      "en": "Children who speak earlier become more intelligent."
+    },
+    "explanation": {
+      "de": "Genetik und Umwelt beeinflussen beides gleichzeitig. Frühes Sprechen ist ein Marker, keine Ursache.",
+      "en": "Genetics and environment influence both simultaneously. Early speech is a marker, not a cause."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4213488/"
+  },
+  {
+    "id": 36,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen mit Haustieren sind glücklicher.",
+      "en": "People with pets are happier."
+    },
+    "explanation": {
+      "de": "Glücklichere, stabilere Menschen entscheiden sich für Haustiere. Depression und instabile Lebenssituation verhindern Haustierhaltung.",
+      "en": "Happier, more stable people choose to have pets. Depression and unstable life situations prevent pet ownership."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7424827/"
+  },
+  {
+    "id": 37,
+    "is_causal": false,
+    "statement": {
+      "de": "Höhere Omega-3-Aufnahme führt zu besserer Herzgesundheit.",
+      "en": "Higher omega-3 intake leads to better heart health."
+    },
+    "explanation": {
+      "de": "Menschen die Omega-3 konsumieren, essen generell mehr Fisch und gesünder. RCTs zeigen schwache oder keine Effekte.",
+      "en": "People who consume omega-3 generally eat more fish and healthier. RCTs show weak or no effects."
+    },
+    "source_url": "https://www.cochrane.org/CD003177/VASC_omega-3-fatty-acid-supplementation-cardiovascular-disease"
+  },
+  {
+    "id": 38,
+    "is_causal": false,
+    "statement": {
+      "de": "Meditation führt zu niedrigerem Blutdruck.",
+      "en": "Meditation leads to lower blood pressure."
+    },
+    "explanation": {
+      "de": "Menschen die meditieren, haben insgesamt gesündere Lebensstile. Rigorose RCTs zeigen minimale oder keine Effekte.",
+      "en": "People who meditate have overall healthier lifestyles. Rigorous RCTs show minimal or no effects."
+    },
+    "source_url": "https://www.ahajournals.org/doi/10.1161/HYPERTENSIONAHA.120.14519"
+  },
+  {
+    "id": 39,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen die Bio-Lebensmittel essen, sind gesünder.",
+      "en": "People who eat organic food are healthier."
+    },
+    "explanation": {
+      "de": "Höheres Einkommen und Gesundheitsbewusstsein führen zu Bio-Kauf und generell gesünderem Lebensstil.",
+      "en": "Higher income and health consciousness lead to organic purchases and generally healthier lifestyle."
+    },
+    "source_url": "https://www.bmj.com/content/344/bmj.e4095"
+  },
+  {
+    "id": 40,
+    "is_causal": false,
+    "statement": {
+      "de": "Schüler mit eigenen Schreibtischen haben bessere Noten.",
+      "en": "Students with their own desks have better grades."
+    },
+    "explanation": {
+      "de": "Wohlhabendere Familien bieten Schreibtische und mehr Bildungsressourcen, Unterstützung.",
+      "en": "Wealthier families provide desks and more educational resources, support."
+    },
+    "source_url": "https://www.oecd.org/education/school/programmeforinternationalstudentassessmentpisa/"
+  },
+  {
+    "id": 41,
+    "is_causal": false,
+    "statement": {
+      "de": "Länder mit mehr Straßenlaternen haben weniger Kriminalität.",
+      "en": "Countries with more street lights have less crime."
+    },
+    "explanation": {
+      "de": "Reichere Länder haben mehr Infrastruktur und bessere Polizeisysteme. Wohlstand reduziert Kriminalität.",
+      "en": "Richer countries have more infrastructure and better police systems. Prosperity reduces crime."
+    },
+    "source_url": "https://www.annualreviews.org/doi/abs/10.1146/annurev-economics-080218-030244"
+  },
+  {
+    "id": 42,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen die Tagebuch schreiben, sind emotional stabiler.",
+      "en": "People who journal are more emotionally stable."
+    },
+    "explanation": {
+      "de": "Emotional stabile Menschen haben Energie für Tagebuch. Schwer Depressive können oft nicht journalen (Reverse Causality).",
+      "en": "Emotionally stable people have energy for journaling. Severely depressed often cannot journal (reverse causality)."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6305886/"
+  },
+  {
+    "id": 43,
+    "is_causal": false,
+    "statement": {
+      "de": "Höherer Fernsehkonsum von Nachrichten führt zu mehr Angst.",
+      "en": "Higher TV news consumption leads to more anxiety."
+    },
+    "explanation": {
+      "de": "Ängstliche Menschen konsumieren mehr Nachrichten zur Sicherheitskontrolle (Reverse Causality).",
+      "en": "Anxious people consume more news for security control (reverse causality)."
+    },
+    "source_url": "https://www.tandfonline.com/doi/full/10.1080/17512786.2019.1630237"
+  },
+  {
+    "id": 44,
+    "is_causal": false,
+    "statement": {
+      "de": "Kinder mit Geschwistern sind sozialer.",
+      "en": "Children with siblings are more social."
+    },
+    "explanation": {
+      "de": "Familienstruktur und Werte beeinflussen beides: Kinderzahl und Sozialisierung. Einzelkinder haben oft intensive soziale Aktivitäten.",
+      "en": "Family structure and values influence both: number of children and socialization. Only children often have intensive social activities."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3959108/"
+  },
+  {
+    "id": 45,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen mit besserer Körperhaltung sind selbstbewusster.",
+      "en": "People with better posture are more confident."
+    },
+    "explanation": {
+      "de": "Selbstbewusste Menschen haben bessere Haltung. Depression und Angst führen zu schlechterer Haltung (Reverse Causality).",
+      "en": "Confident people have better posture. Depression and anxiety lead to worse posture (reverse causality)."
+    },
+    "source_url": "https://journals.sagepub.com/doi/10.1177/0956797614553946"
+  },
+  {
+    "id": 46,
+    "is_causal": false,
+    "statement": {
+      "de": "Gegenden mit mehr Restaurants haben gesündere Einwohner.",
+      "en": "Areas with more restaurants have healthier residents."
+    },
+    "explanation": {
+      "de": "Wohlhabendere urbane Gegenden haben mehr Restaurants und besseren Zugang zu Gesundheitsversorgung.",
+      "en": "Wealthier urban areas have more restaurants and better access to healthcare."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4205185/"
+  },
+  {
+    "id": 47,
+    "is_causal": false,
+    "statement": {
+      "de": "Studenten die Vorlesungen besuchen, haben bessere Noten.",
+      "en": "Students who attend lectures have better grades."
+    },
+    "explanation": {
+      "de": "Motivierte Studenten besuchen Vorlesungen und lernen mehr. Motivation ist der gemeinsame Faktor.",
+      "en": "Motivated students attend lectures and study more. Motivation is the common factor."
+    },
+    "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S0191491X19300011"
+  },
+  {
+    "id": 48,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen die mehr lächeln, sind glücklicher.",
+      "en": "People who smile more are happier."
+    },
+    "explanation": {
+      "de": "Glückliche Menschen lächeln mehr (Reverse Causality). \"Facial Feedback\"-Effekt ist minimal und umstritten.",
+      "en": "Happy people smile more (reverse causality). \"Facial feedback\" effect is minimal and controversial."
+    },
+    "source_url": "https://www.nature.com/articles/s41562-019-0561-9"
+  },
+  {
+    "id": 49,
+    "is_causal": false,
+    "statement": {
+      "de": "Höhere Luftverschmutzung führt zu mehr Atemwegserkrankungen-Diagnosen.",
+      "en": "Higher air pollution leads to more respiratory disease diagnoses."
+    },
+    "explanation": {
+      "de": "In verschmutzten Städten gibt es bessere medizinische Überwachung und mehr Diagnosen (Detection Bias bei echter Korrelation).",
+      "en": "In polluted cities there is better medical monitoring and more diagnoses (detection bias with real correlation)."
+    },
+    "source_url": "https://www.thelancet.com/journals/lanres/article/PIIS2213-2600(18)30437-0/fulltext"
+  },
+  {
+    "id": 50,
+    "is_causal": false,
+    "statement": {
+      "de": "Menschen die mehr Treppen steigen, haben niedrigeren BMI.",
+      "en": "People who climb more stairs have lower BMI."
+    },
+    "explanation": {
+      "de": "Gesündere Menschen können Treppen steigen. Übergewichtige nutzen öfter Aufzüge (Reverse Causality).",
+      "en": "Healthier people can climb stairs. Overweight people use elevators more often (reverse causality)."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6213745/"
+  },
+  {
+    "id": 51,
+    "is_causal": true,
+    "statement": {
+      "de": "Regelmäßiges aerobes Training reduziert depressive Symptome.",
+      "en": "Regular aerobic exercise reduces depressive symptoms."
+    },
+    "explanation": {
+      "de": "RCTs zeigen moderate bis starke Effekte. Sport erhöht Neuroplastizität und Neurotransmitter.",
+      "en": "RCTs show moderate to strong effects. Exercise increases neuroplasticity and neurotransmitters."
+    },
+    "source_url": "https://www.bmj.com/content/385/bmj.q1024"
+  },
+  {
+    "id": 52,
+    "is_causal": true,
+    "statement": {
+      "de": "Infektion mit Helicobacter pylori verursacht Magengeschwüre.",
+      "en": "Infection with Helicobacter pylori causes stomach ulcers."
+    },
+    "explanation": {
+      "de": "Antibiotika-Behandlung heilt Geschwüre. Nobelpreis 2005 für diese Entdeckung.",
+      "en": "Antibiotic treatment cures ulcers. Nobel Prize 2005 for this discovery."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(84)91816-6/fulltext"
+  },
+  {
+    "id": 53,
     "is_causal": true,
     "statement": {
       "de": "Die Umstellung auf Sommerzeit führt kurzfristig zu mehr Herzinfarkten.",
-      "en": "The switch to daylight saving time leads to a short-term rise in heart attacks."
+      "en": "Daylight saving time transition causes short-term increase in heart attacks."
     },
     "explanation": {
-      "de": "Schlafmangel und Störung des zirkadianen Rhythmus erhöhen kurzfristig das Herzinfarktrisiko.",
-      "en": "Sleep deprivation and disruption of circadian rhythm temporarily raise heart attack risk."
+      "de": "Schlafmangel und zirkadiane Störung erhöhen akut Herzinfarktrisiko.",
+      "en": "Sleep deprivation and circadian disruption acutely increase heart attack risk."
     },
     "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMc0807104"
   },
   {
-    "id": 13,
+    "id": 54,
     "is_causal": true,
     "statement": {
-      "de": "Pränatale Hungerexposition erhöht das spätere Risiko für Stoffwechsel- und Herzkrankheiten.",
-      "en": "Prenatal famine exposure increases later risk of metabolic and cardiovascular disease."
+      "de": "Pränatale Hungerexposition erhöht das spätere Risiko für Stoffwechselkrankheiten.",
+      "en": "Prenatal famine exposure increases later risk of metabolic disease."
     },
     "explanation": {
-      "de": "Unterernährung während der Schwangerschaft führt zu epigenetischen Veränderungen im Kind – erhöhter Krankheitsrisiko später.",
-      "en": "Malnutrition during pregnancy leads to epigenetic changes in the child – higher disease risk later in life."
+      "de": "Epigenetische Programmierung während kritischer Entwicklungsphasen hat lebenslange Folgen.",
+      "en": "Epigenetic programming during critical developmental phases has lifelong consequences."
     },
     "source_url": "https://pubmed.ncbi.nlm.nih.gov/11738798/"
   },
   {
-    "id": 14,
+    "id": 55,
     "is_causal": true,
     "statement": {
       "de": "Frühe Antibiotikagaben erhöhen das Risiko für Übergewicht im Kindesalter.",
-      "en": "Early antibiotic exposure increases the risk of childhood obesity."
+      "en": "Early antibiotic exposure increases risk of childhood obesity."
     },
     "explanation": {
-      "de": "Antibiotika verändern das Mikrobiom und beeinflussen Energiehaushalt und Appetit.",
-      "en": "Antibiotics alter the microbiome and affect energy balance and appetite."
+      "de": "Antibiotika stören das Mikrobiom und beeinflussen Metabolismus und Appetitregulation.",
+      "en": "Antibiotics disrupt the microbiome and affect metabolism and appetite regulation."
     },
     "source_url": "https://jamanetwork.com/journals/jamapediatrics/fullarticle/1909801"
   },
   {
-    "id": 15,
+    "id": 56,
     "is_causal": true,
     "statement": {
-      "de": "Trinkwasser-Desinfektion reduziert Durchfallkrankheiten und Kindersterblichkeit drastisch.",
-      "en": "Drinking water disinfection drastically reduces diarrheal disease and child mortality."
+      "de": "Trinkwasser-Chlorierung reduziert Durchfallkrankheiten dramatisch.",
+      "en": "Water chlorination dramatically reduces diarrheal diseases."
     },
     "explanation": {
-      "de": "Chlorierung und Filtration verringern Infektionen signifikant – einer der größten Public-Health-Erfolge.",
-      "en": "Chlorination and filtration significantly reduce infections – one of the greatest public health successes."
+      "de": "Abtötung von Pathogenen im Wasser verhindert direkt Infektionen.",
+      "en": "Killing pathogens in water directly prevents infections."
     },
-    "source_url": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X%2819%2930315-8/fulltext"
+    "source_url": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(19)30315-8/fulltext"
   },
   {
-    "id": 16,
+    "id": 57,
     "is_causal": true,
     "statement": {
       "de": "Rauchen verursacht Lungenkrebs.",
       "en": "Smoking causes lung cancer."
     },
     "explanation": {
-      "de": "Eine der bestbelegten kausalen Beziehungen überhaupt: starke Dosis-Wirkungs-Beziehung zwischen Tabak und Krebs.",
-      "en": "One of the best-proven causal relationships: strong dose-response between tobacco and cancer."
+      "de": "Starke Dosis-Wirkungs-Beziehung, biologischer Mechanismus bekannt, multiple Studiendesigns konsistent.",
+      "en": "Strong dose-response relationship, biological mechanism known, multiple study designs consistent."
     },
     "source_url": "https://www.bmj.com/content/2/4682/739"
   },
   {
-    "id": 17,
+    "id": 58,
     "is_causal": true,
     "statement": {
-      "de": "Blei-Exposition in der Kindheit senkt den IQ langfristig.",
-      "en": "Lead exposure in childhood lowers IQ in the long term."
+      "de": "Blei-Exposition in der Kindheit senkt den IQ dauerhaft.",
+      "en": "Lead exposure in childhood permanently lowers IQ."
     },
     "explanation": {
-      "de": "Selbst geringe Bleibelastung führt zu messbaren kognitiven Einbußen.",
-      "en": "Even low lead exposure leads to measurable cognitive losses."
+      "de": "Neurotoxische Wirkung auf sich entwickelndes Gehirn ist gut dokumentiert.",
+      "en": "Neurotoxic effect on developing brain is well documented."
     },
     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1257652/"
   },
   {
-    "id": 18,
+    "id": 59,
     "is_causal": true,
     "statement": {
       "de": "Sicherheitsgurte reduzieren tödliche Verkehrsunfälle.",
       "en": "Seatbelts reduce fatal car accidents."
     },
     "explanation": {
-      "de": "Mechanischer Schutzmechanismus mit klar messbarer Wirkung auf Todes- und Verletzungsrate.",
-      "en": "Mechanical protection mechanism with a clearly measurable effect on death and injury rates."
+      "de": "Physikalischer Schutzmechanismus mit klarer Wirkung auf Verletzungsschwere.",
+      "en": "Physical protection mechanism with clear effect on injury severity."
     },
     "source_url": "https://www.cdc.gov/seat-belts/facts/index.html"
   },
   {
-    "id": 19,
+    "id": 60,
     "is_causal": true,
     "statement": {
       "de": "Masern-Impfprogramme haben die Sterblichkeit massiv reduziert.",
       "en": "Measles vaccination programs have drastically reduced mortality."
     },
     "explanation": {
-      "de": "WHO-Daten zeigen Millionen verhinderte Todesfälle durch Impfprogramme.",
-      "en": "WHO data show millions of deaths prevented by vaccination programs."
+      "de": "WHO-Daten zeigen Millionen verhinderte Todesfälle durch Immunisierung.",
+      "en": "WHO data show millions of deaths prevented by immunization."
     },
     "source_url": "https://www.who.int/news-room/fact-sheets/detail/measles"
   },
   {
-    "id": 20,
-    "is_causal": false,
+    "id": 61,
+    "is_causal": true,
     "statement": {
-      "de": "Mehr Schulsozialarbeiter verursachen mehr Mobbing (scheinbar).",
-      "en": "More school social workers cause more bullying (apparently)."
+      "de": "Händewaschen mit Seife verhindert Infektionskrankheiten.",
+      "en": "Handwashing with soap prevents infectious diseases."
     },
     "explanation": {
-      "de": "Selektive Einstellung und erhöhte Meldungen erzeugen eine Scheinkorrelation.",
-      "en": "Selective hiring and increased reporting create a spurious correlation."
+      "de": "Mechanische Entfernung von Pathogenen reduziert Übertragung um 30-50%.",
+      "en": "Mechanical removal of pathogens reduces transmission by 30-50%."
     },
-    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7004015/"
+    "source_url": "https://www.cdc.gov/handwashing/why-handwashing.html"
+  },
+  {
+    "id": 62,
+    "is_causal": true,
+    "statement": {
+      "de": "Hoher Blutdruck verursacht Schlaganfälle.",
+      "en": "High blood pressure causes strokes."
+    },
+    "explanation": {
+      "de": "Blutdrucksenkung reduziert Schlaganfallrisiko in RCTs nachweislich um 30-40%.",
+      "en": "Blood pressure reduction demonstrably reduces stroke risk by 30-40% in RCTs."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(00)04446-2/fulltext"
+  },
+  {
+    "id": 63,
+    "is_causal": true,
+    "statement": {
+      "de": "Asbest-Exposition verursacht Lungenkrebs und Mesotheliom.",
+      "en": "Asbestos exposure causes lung cancer and mesothelioma."
+    },
+    "explanation": {
+      "de": "Klare Dosis-Wirkungs-Beziehung, spezifische Krankheit (Mesotheliom) fast ausschließlich durch Asbest.",
+      "en": "Clear dose-response relationship, specific disease (mesothelioma) almost exclusively from asbestos."
+    },
+    "source_url": "https://www.iarc.who.int/featured-news/asbestos-and-cancer/"
+  },
+  {
+    "id": 64,
+    "is_causal": true,
+    "statement": {
+      "de": "Jod-Supplementierung verhindert Kropf und Entwicklungsstörungen.",
+      "en": "Iodine supplementation prevents goiter and developmental disorders."
+    },
+    "explanation": {
+      "de": "Jod ist essentiell für Schilddrüsenhormone. Supplementierung zeigt klare präventive Wirkung.",
+      "en": "Iodine is essential for thyroid hormones. Supplementation shows clear preventive effect."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(07)61235-6/fulltext"
+  },
+  {
+    "id": 65,
+    "is_causal": true,
+    "statement": {
+      "de": "UV-Strahlung verursacht Hautkrebs.",
+      "en": "UV radiation causes skin cancer."
+    },
+    "explanation": {
+      "de": "DNA-Schädigung durch UV-Strahlung ist kausal für Hautkrebs belegt.",
+      "en": "DNA damage from UV radiation is causally proven for skin cancer."
+    },
+    "source_url": "https://www.cancer.gov/about-cancer/causes-prevention/risk/sunlight"
+  },
+  {
+    "id": 66,
+    "is_causal": true,
+    "statement": {
+      "de": "Folsäure-Supplementierung reduziert Neuralrohrdefekte bei Neugeborenen.",
+      "en": "Folic acid supplementation reduces neural tube defects in newborns."
+    },
+    "explanation": {
+      "de": "Randomisierte Studien zeigen 70% Reduktion von Spina bifida und Anenzephalie.",
+      "en": "Randomized studies show 70% reduction of spina bifida and anencephaly."
+    },
+    "source_url": "https://www.nejm.org/doi/full/10.1056/NEJM199212243272602"
+  },
+  {
+    "id": 67,
+    "is_causal": true,
+    "statement": {
+      "de": "Übergewicht erhöht das Risiko für Typ-2-Diabetes.",
+      "en": "Obesity increases the risk of type 2 diabetes."
+    },
+    "explanation": {
+      "de": "Gewichtsreduktion reduziert Diabetes-Risiko nachweislich. Klarer biologischer Mechanismus.",
+      "en": "Weight reduction demonstrably reduces diabetes risk. Clear biological mechanism."
+    },
+    "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa012512"
+  },
+  {
+    "id": 68,
+    "is_causal": true,
+    "statement": {
+      "de": "Luftverschmutzung durch Feinstaub verursacht Herz-Kreislauf-Erkrankungen.",
+      "en": "Air pollution from particulate matter causes cardiovascular disease."
+    },
+    "explanation": {
+      "de": "Reduktion von Feinstaub führt zu messbarer Verbesserung der Herz-Gesundheit.",
+      "en": "Reduction of particulate matter leads to measurable improvement in heart health."
+    },
+    "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMsa0805646"
+  },
+  {
+    "id": 69,
+    "is_causal": true,
+    "statement": {
+      "de": "Alkohol in der Schwangerschaft verursacht fetale Alkoholspektrumstörungen.",
+      "en": "Alcohol during pregnancy causes fetal alcohol spectrum disorders."
+    },
+    "explanation": {
+      "de": "Direkte toxische Wirkung auf fetale Entwicklung, keine sichere Menge bekannt.",
+      "en": "Direct toxic effect on fetal development, no safe amount known."
+    },
+    "source_url": "https://www.cdc.gov/ncbddd/fasd/facts.html"
+  },
+  {
+    "id": 70,
+    "is_causal": true,
+    "statement": {
+      "de": "Statine reduzieren das Risiko für Herzinfarkte.",
+      "en": "Statins reduce the risk of heart attacks."
+    },
+    "explanation": {
+      "de": "Große RCTs zeigen konsistente 25-30% Risikoreduktion durch Cholesterinsenkung.",
+      "en": "Large RCTs show consistent 25-30% risk reduction through cholesterol lowering."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(10)61350-5/fulltext"
+  },
+  {
+    "id": 71,
+    "is_causal": true,
+    "statement": {
+      "de": "Schlafen in Bauchlage erhöht das Risiko für plötzlichen Kindstod.",
+      "en": "Sleeping on stomach increases risk of sudden infant death syndrome."
+    },
+    "explanation": {
+      "de": "\"Back to Sleep\"-Kampagne reduzierte SIDS um 50%. Klare Kausalität durch Atemwegsverlegung.",
+      "en": "\"Back to Sleep\" campaign reduced SIDS by 50%. Clear causality through airway obstruction."
+    },
+    "source_url": "https://www.nichd.nih.gov/health/topics/sids"
+  },
+  {
+    "id": 72,
+    "is_causal": true,
+    "statement": {
+      "de": "Impfung gegen Humane Papillomviren verhindert Gebärmutterhalskrebs.",
+      "en": "HPV vaccination prevents cervical cancer."
+    },
+    "explanation": {
+      "de": "HPV verursacht 99% der Zervixkarzinome. Impfung reduziert Präkanzerosen um 90%.",
+      "en": "HPV causes 99% of cervical cancers. Vaccination reduces precancerous lesions by 90%."
+    },
+    "source_url": "https://www.who.int/news-room/fact-sheets/detail/human-papillomavirus-(hpv)-and-cervical-cancer"
+  },
+  {
+    "id": 73,
+    "is_causal": true,
+    "statement": {
+      "de": "Kokain-Konsum erhöht das Risiko für Herzinfarkt dramatisch.",
+      "en": "Cocaine use dramatically increases heart attack risk."
+    },
+    "explanation": {
+      "de": "Kokain verursacht Gefäßverengung und erhöht Herzinfarktrisiko um das 24-fache innerhalb einer Stunde nach Konsum.",
+      "en": "Cocaine causes vasoconstriction and increases heart attack risk 24-fold within one hour of use."
+    },
+    "source_url": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.107.752139"
+  },
+  {
+    "id": 74,
+    "is_causal": true,
+    "statement": {
+      "de": "Passivrauchen verursacht Lungenkrebs bei Nichtrauchern.",
+      "en": "Secondhand smoke causes lung cancer in non-smokers."
+    },
+    "explanation": {
+      "de": "Meta-Analysen zeigen 20-30% erhöhtes Lungenkrebsrisiko bei chronischer Exposition.",
+      "en": "Meta-analyses show 20-30% increased lung cancer risk with chronic exposure."
+    },
+    "source_url": "https://www.cancer.gov/about-cancer/causes-prevention/risk/tobacco/second-hand-smoke-fact-sheet"
+  },
+  {
+    "id": 75,
+    "is_causal": true,
+    "statement": {
+      "de": "Schlafentzug beeinträchtigt kognitive Leistung messbar.",
+      "en": "Sleep deprivation measurably impairs cognitive performance."
+    },
+    "explanation": {
+      "de": "Experimentelle Studien zeigen dosisabhängige Verschlechterung von Aufmerksamkeit und Gedächtnis.",
+      "en": "Experimental studies show dose-dependent deterioration of attention and memory."
+    },
+    "source_url": "https://www.nature.com/articles/nrn3447"
+  },
+  {
+    "id": 76,
+    "is_causal": true,
+    "statement": {
+      "de": "Helmpflicht für Motorradfahrer reduziert tödliche Kopfverletzungen.",
+      "en": "Motorcycle helmet laws reduce fatal head injuries."
+    },
+    "explanation": {
+      "de": "Helme reduzieren Todesrisiko um 37% und Hirnverletzungen um 69%.",
+      "en": "Helmets reduce death risk by 37% and brain injuries by 69%."
+    },
+    "source_url": "https://www.cdc.gov/motorvehiclesafety/mc/index.html"
+  },
+  {
+    "id": 77,
+    "is_causal": true,
+    "statement": {
+      "de": "Transfettsäuren erhöhen das Risiko für Herz-Kreislauf-Erkrankungen.",
+      "en": "Trans fats increase risk of cardiovascular disease."
+    },
+    "explanation": {
+      "de": "Jede 2% Erhöhung von Trans-Fett-Konsum erhöht Herzrisiko um 23%. Verbote zeigen positive Effekte.",
+      "en": "Each 2% increase in trans fat consumption raises heart risk by 23%. Bans show positive effects."
+    },
+    "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1909301"
+  },
+  {
+    "id": 78,
+    "is_causal": true,
+    "statement": {
+      "de": "Chemotherapie verlängert das Überleben bei vielen Krebsarten.",
+      "en": "Chemotherapy extends survival in many cancer types."
+    },
+    "explanation": {
+      "de": "RCTs zeigen signifikante Überlebensvorteile bei zahlreichen Krebsarten.",
+      "en": "RCTs show significant survival benefits in numerous cancer types."
+    },
+    "source_url": "https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(11)70384-9/fulltext"
+  },
+  {
+    "id": 79,
+    "is_causal": true,
+    "statement": {
+      "de": "Antibiotika-Behandlung heilt bakterielle Lungenentzündung.",
+      "en": "Antibiotic treatment cures bacterial pneumonia."
+    },
+    "explanation": {
+      "de": "Antibiotika reduzieren Mortalität bei bakterieller Pneumonie um 80-90%.",
+      "en": "Antibiotics reduce mortality from bacterial pneumonia by 80-90%."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)30994-2/fulltext"
+  },
+  {
+    "id": 80,
+    "is_causal": true,
+    "statement": {
+      "de": "Insulingabe rettet Leben bei Typ-1-Diabetes.",
+      "en": "Insulin administration saves lives in type 1 diabetes."
+    },
+    "explanation": {
+      "de": "Vor Insulin war Typ-1-Diabetes innerhalb von Monaten tödlich. Insulin ermöglicht normales Leben.",
+      "en": "Before insulin, type 1 diabetes was fatal within months. Insulin enables normal life."
+    },
+    "source_url": "https://www.diabetes.org/diabetes/history-of-insulin"
+  },
+  {
+    "id": 81,
+    "is_causal": true,
+    "statement": {
+      "de": "Lärmbelastung verursacht Hörverlust.",
+      "en": "Noise exposure causes hearing loss."
+    },
+    "explanation": {
+      "de": "Dosisabhängige Schädigung von Haarzellen im Innenohr ist gut dokumentiert.",
+      "en": "Dose-dependent damage to hair cells in inner ear is well documented."
+    },
+    "source_url": "https://www.who.int/news-room/fact-sheets/detail/deafness-and-hearing-loss"
+  },
+  {
+    "id": 82,
+    "is_causal": true,
+    "statement": {
+      "de": "Übermäßiger Alkoholkonsum verursacht Leberzirrhose.",
+      "en": "Excessive alcohol consumption causes liver cirrhosis."
+    },
+    "explanation": {
+      "de": "Klare Dosis-Wirkungs-Beziehung, biologischer Mechanismus bekannt, Abstinenz kann Progression stoppen.",
+      "en": "Clear dose-response relationship, biological mechanism known, abstinence can stop progression."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)30134-X/fulltext"
+  },
+  {
+    "id": 83,
+    "is_causal": true,
+    "statement": {
+      "de": "Sonnencreme reduziert das Risiko für Hautkrebs.",
+      "en": "Sunscreen reduces skin cancer risk."
+    },
+    "explanation": {
+      "de": "Langzeitstudien zeigen 40% Reduktion von Melanomen bei regelmäßiger Anwendung.",
+      "en": "Long-term studies show 40% reduction of melanomas with regular use."
+    },
+    "source_url": "https://www.jaad.org/article/S0190-9622(10)02211-8/fulltext"
+  },
+  {
+    "id": 84,
+    "is_causal": true,
+    "statement": {
+      "de": "Kognitive Verhaltenstherapie reduziert Angststörungen effektiv.",
+      "en": "Cognitive behavioral therapy effectively reduces anxiety disorders."
+    },
+    "explanation": {
+      "de": "Meta-Analysen von RCTs zeigen große Effektstärken (d=0.8-1.0) bei Angststörungen.",
+      "en": "Meta-analyses of RCTs show large effect sizes (d=0.8-1.0) for anxiety disorders."
+    },
+    "source_url": "https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(18)30052-6/fulltext"
+  },
+  {
+    "id": 85,
+    "is_causal": true,
+    "statement": {
+      "de": "Zahnpasta mit Fluorid verhindert Karies.",
+      "en": "Fluoride toothpaste prevents cavities."
+    },
+    "explanation": {
+      "de": "Fluorid remineralisiert Zahnschmelz. Cochrane-Review zeigt 24% Kariesreduktion.",
+      "en": "Fluoride remineralizes tooth enamel. Cochrane review shows 24% cavity reduction."
+    },
+    "source_url": "https://www.cochrane.org/CD007868/ORAL_fluoride-toothpastes-different-concentrations-preventing-tooth-decay"
+  },
+  {
+    "id": 86,
+    "is_causal": true,
+    "statement": {
+      "de": "Stillen reduziert Infektionsrisiko bei Säuglingen.",
+      "en": "Breastfeeding reduces infection risk in infants."
+    },
+    "explanation": {
+      "de": "Muttermilch enthält Antikörper und reduziert Atemwegs- und Magen-Darm-Infektionen um 50-70%.",
+      "en": "Breast milk contains antibodies and reduces respiratory and GI infections by 50-70%."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)01024-7/fulltext"
+  },
+  {
+    "id": 87,
+    "is_causal": true,
+    "statement": {
+      "de": "Aspirin reduziert das Risiko für Schlaganfall bei Hochrisikopatienten.",
+      "en": "Aspirin reduces stroke risk in high-risk patients."
+    },
+    "explanation": {
+      "de": "Thrombozytenaggregationshemmung verhindert Gefäßverschlüsse. 25% Risikoreduktion in RCTs.",
+      "en": "Platelet aggregation inhibition prevents vascular occlusion. 25% risk reduction in RCTs."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(08)61359-4/fulltext"
+  },
+  {
+    "id": 88,
+    "is_causal": true,
+    "statement": {
+      "de": "Körperliche Aktivität senkt das Risiko für Darmkrebs.",
+      "en": "Physical activity lowers colon cancer risk."
+    },
+    "explanation": {
+      "de": "Meta-Analysen zeigen 20-30% Risikoreduktion. Mechanismus: beschleunigte Darmpassage, Immunmodulation.",
+      "en": "Meta-analyses show 20-30% risk reduction. Mechanism: accelerated intestinal transit, immune modulation."
+    },
+    "source_url": "https://www.bmj.com/content/354/bmj.i3857"
+  },
+  {
+    "id": 89,
+    "is_causal": true,
+    "statement": {
+      "de": "Malaria-Moskitonetze reduzieren Malaria-Todesfälle um 50%.",
+      "en": "Malaria bed nets reduce malaria deaths by 50%."
+    },
+    "explanation": {
+      "de": "Insektizid-behandelte Netze verhindern Mückenstiche und damit Übertragung.",
+      "en": "Insecticide-treated nets prevent mosquito bites and thus transmission."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)00411-2/fulltext"
+  },
+  {
+    "id": 90,
+    "is_causal": true,
+    "statement": {
+      "de": "Hochdosierte Strahlentherapie verursacht Gewebeschäden.",
+      "en": "High-dose radiation therapy causes tissue damage."
+    },
+    "explanation": {
+      "de": "Ionisierende Strahlung schädigt DNA und Zellen dosisabhängig.",
+      "en": "Ionizing radiation damages DNA and cells in dose-dependent manner."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6161487/"
+  },
+  {
+    "id": 91,
+    "is_causal": true,
+    "statement": {
+      "de": "Antibabypille reduziert das Risiko für Eierstockkrebs um 50%.",
+      "en": "Birth control pills reduce ovarian cancer risk by 50%."
+    },
+    "explanation": {
+      "de": "Ovulationshemmung schützt vor Eierstockkrebs. Effekt hält Jahre nach Absetzen an.",
+      "en": "Ovulation suppression protects against ovarian cancer. Effect persists years after stopping."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(07)61534-7/fulltext"
+  },
+  {
+    "id": 92,
+    "is_causal": true,
+    "statement": {
+      "de": "Vitamin A-Gabe reduziert Kindersterblichkeit in Entwicklungsländern.",
+      "en": "Vitamin A supplementation reduces child mortality in developing countries."
+    },
+    "explanation": {
+      "de": "Meta-Analysen zeigen 24% Reduktion der Gesamtmortalität bei Kindern.",
+      "en": "Meta-analyses show 24% reduction in all-cause mortality in children."
+    },
+    "source_url": "https://www.cochrane.org/CD008524/NEONATAL_vitamin-supplementation-reducing-child-deaths-low-and-middle-income-countries"
+  },
+  {
+    "id": 93,
+    "is_causal": true,
+    "statement": {
+      "de": "Geschwindigkeitsbegrenzungen reduzieren Verkehrstote.",
+      "en": "Speed limits reduce traffic fatalities."
+    },
+    "explanation": {
+      "de": "Kinetische Energie steigt quadratisch mit Geschwindigkeit. Reduktion um 10 km/h senkt Todesfälle um 20-30%.",
+      "en": "Kinetic energy increases quadratically with speed. 10 km/h reduction lowers deaths by 20-30%."
+    },
+    "source_url": "https://www.who.int/publications/i/item/9789241563840"
+  },
+  {
+    "id": 94,
+    "is_causal": true,
+    "statement": {
+      "de": "Rauchverbot in öffentlichen Räumen reduziert Herzinfarkte.",
+      "en": "Public smoking bans reduce heart attacks."
+    },
+    "explanation": {
+      "de": "Meta-Analysen zeigen 15% Reduktion von Herzinfarkten innerhalb eines Jahres nach Einführung.",
+      "en": "Meta-analyses show 15% reduction in heart attacks within one year of implementation."
+    },
+    "source_url": "https://www.bmj.com/content/344/bmj.e1301"
+  },
+  {
+    "id": 95,
+    "is_causal": true,
+    "statement": {
+      "de": "Bleifreies Benzin führte zu messbarem IQ-Anstieg in Bevölkerungen.",
+      "en": "Unleaded gasoline led to measurable IQ increase in populations."
+    },
+    "explanation": {
+      "de": "Reduktion von Blei in Luft korreliert mit IQ-Anstieg. Kausalmechanismus ist Bleientfernung aus Umwelt.",
+      "en": "Reduction of lead in air correlates with IQ increase. Causal mechanism is lead removal from environment."
+    },
+    "source_url": "https://www.pnas.org/doi/10.1073/pnas.2118019119"
+  },
+  {
+    "id": 96,
+    "is_causal": true,
+    "statement": {
+      "de": "Narkose-Medikamente verursachen Bewusstlosigkeit.",
+      "en": "Anesthetic drugs cause unconsciousness."
+    },
+    "explanation": {
+      "de": "Dosisabhängige, reversible Unterdrückung neuronaler Aktivität ist gut verstanden.",
+      "en": "Dose-dependent, reversible suppression of neuronal activity is well understood."
+    },
+    "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMra0808281"
+  },
+  {
+    "id": 97,
+    "is_causal": true,
+    "statement": {
+      "de": "Händedesinfektion auf Intensivstationen reduziert nosokomiale Infektionen.",
+      "en": "Hand disinfection in ICUs reduces hospital-acquired infections."
+    },
+    "explanation": {
+      "de": "Interventionsstudien zeigen 30-50% Reduktion von Krankenhausinfektionen.",
+      "en": "Intervention studies show 30-50% reduction in hospital infections."
+    },
+    "source_url": "https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(09)70150-4/fulltext"
+  },
+  {
+    "id": 98,
+    "is_causal": true,
+    "statement": {
+      "de": "Stress erhöht Cortisol-Spiegel im Blut.",
+      "en": "Stress increases blood cortisol levels."
+    },
+    "explanation": {
+      "de": "HPA-Achsen-Aktivierung als direkte physiologische Stressreaktion ist gut dokumentiert.",
+      "en": "HPA axis activation as direct physiological stress response is well documented."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5137920/"
+  },
+  {
+    "id": 99,
+    "is_causal": true,
+    "statement": {
+      "de": "Bildschirmblaulicht-Filter verbessern Schlafqualität nicht nachweisbar.",
+      "en": "Blue light screen filters do not measurably improve sleep quality."
+    },
+    "explanation": {
+      "de": "RCTs zeigen keine signifikanten Effekte. Screenzeit-Reduktion selbst ist wichtiger als Blaulicht-Filterung.",
+      "en": "RCTs show no significant effects. Screen time reduction itself is more important than blue light filtering."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6751071/"
+  },
+  {
+    "id": 100,
+    "is_causal": true,
+    "statement": {
+      "de": "Salz-Reduktion senkt den Blutdruck.",
+      "en": "Salt reduction lowers blood pressure."
+    },
+    "explanation": {
+      "de": "Meta-Analysen von RCTs zeigen 5-6 mmHg systolische Blutdrucksenkung bei Salzreduktion.",
+      "en": "Meta-analyses of RCTs show 5-6 mmHg systolic blood pressure reduction with salt reduction."
+    },
+    "source_url": "https://www.bmj.com/content/346/bmj.f1378"
   }
 ]
