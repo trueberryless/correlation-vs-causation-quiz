@@ -1,5 +1,7 @@
 # Correlation vs Causation Quiz
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3fa8711c-4139-47a1-be5a-591103950742/deploy-status)](https://app.netlify.com/projects/correlation-vs-causation-quiz/deploys)
+
 An interactive quiz to test your ability to distinguish between correlation and causation.
 
 ## Features
