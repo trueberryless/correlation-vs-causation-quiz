@@ -1,0 +1,262 @@
+[
+  {
+    "id": 1,
+    "is_causal": false,
+    "statement": {
+      "de": "In Städten mit hohem Bio-Lebensmittelkauf sind die Schulnoten besser.",
+      "en": "In cities with high organic food purchase, school grades are better."
+    },
+    "explanation": {
+      "de": "Scheint plausibel (gesunde Ernährung → bessere Konzentration), ist aber meist ein Sozioökonomik-Konfundierer: wohlhabendere und besser gebildete Familien kaufen häufiger Bio und können zudem mehr Bildungsressourcen bereitstellen. Daher korreliert Bio-Kauf mit Noten, verursacht sie aber nicht direkt.",
+      "en": "It sounds plausible (healthy diet → better concentration), but usually it’s a socio-economic confounder: wealthier and better educated families buy organic more often and also provide more educational resources. Thus, organic purchasing correlates with grades, but does not directly cause them."
+    },
+    "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0069778"
+  },
+  {
+    "id": 2,
+    "is_causal": false,
+    "statement": {
+      "de": "Klassen mit vielen Smartphones führen dazu, dass Schüler schlechter schlafen.",
+      "en": "Classes with many smartphones lead to students sleeping worse."
+    },
+    "explanation": {
+      "de": "Es gibt eine Assoziation zwischen Smartphone-Nutzung und Schlafproblemen — aber Richtung und Drittvariablen sind wichtig: Jugendliche mit Schlafproblemen nutzen nachts eher Geräte (Reverse Causality) und Stress/Prüfungsdruck kann beides verursachen. Beobachtungsdaten allein reichen nicht für Kausalität.",
+      "en": "There is an association between smartphone use and sleep problems — but direction and third-variables matter: Youth with sleep problems use devices at night more often (reverse causality), and stress/exam pressure may cause both. Observational data alone is insufficient for causality."
+    },
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10123719/"
+  },
+  {
+    "id": 3,
+    "is_causal": false,
+    "statement": {
+      "de": "Je mehr Feuerwehrleute an einem Brand eingesetzt sind, desto größer der Sachschaden.",
+      "en": "The more firefighters are deployed to a fire, the larger the damage."
+    },
+    "explanation": {
+      "de": "Positive Korrelation, aber die Schwere des Feuers verursacht beides: große Brände brauchen mehr Einsatzkräfte und verursachen mehr Schaden. Anzahl der Feuerwehrleute ist ein Marker, kein Verursacher.",
+      "en": "Positive correlation, but the severity of the fire causes both: big fires require more personnel and cause more damage. The number of firefighters is a marker, not the cause."
+    },
+    "source_url": "https://lup.lub.lu.se/student-papers/record/9041395/file/9041396.pdf"
+  },
+  {
+    "id": 4,
+    "is_causal": false,
+    "statement": {
+      "de": "Orte mit mehr verkauften Fahrradhelmen haben mehr Kopfverletzungen.",
+      "en": "Places with more bicycle helmet sales have more head injuries."
+    },
+    "explanation": {
+      "de": "Das ist ein typisches Scheinkorrelation-Argument: Regionen mit hohem Radverkehr haben mehr Unfälle und gleichzeitig mehr Helmverkäufe. Helmverkäufe markieren Rad-Dichte; sie verursachen die Verletzungsrate nicht.",
+      "en": "That is a typical case of spurious correlation: Regions with high bicycle traffic have more accidents and at the same time more helmet purchases. Helmet sales mark cycling density; they do not cause injury rates."
+    },
+    "source_url": "https://www.cochrane.org/evidence/CD005401_bicycle-helmet-legislation-uptake-helmet-use-and-prevention-head-injuries"
+  },
+  {
+    "id": 5,
+    "is_causal": false,
+    "statement": {
+      "de": "Schulen mit mehr Schulsozialarbeitern haben höhere Melderaten von Mobbing, also mehr Mobbing.",
+      "en": "Schools with more school social workers have higher reported rates of bullying, so more bullying."
+    },
+    "explanation": {
+      "de": "Mehr Sozialarbeitende führen oft zu besserer Erkennung und Meldung (Detection bias). Schulen mit größeren sozialen Problemen stellen mehr Sozialarbeiter ein; die erhöhte Rate kann also Melde- statt Inzidenz-Effekt sein.",
+      "en": "Having more social workers often leads to better detection and reporting (detection bias). Schools with more social problems hire more social workers — the increased rate may therefore reflect reporting rather than incidence."
+    },
+    "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/hpja.680"
+  },
+  {
+    "id": 6,
+    "is_causal": false,
+    "statement": {
+      "de": "Je mehr Eis verkauft wird, desto mehr Ertrinkungsfälle gibt es.",
+      "en": "The more ice cream sold, the more drowning cases occur."
+    },
+    "explanation": {
+      "de": "Beide Variablen steigen im Sommer. Die gemeinsame Ursache ist Temperatur/Saison; Eisverkauf verursacht nicht Ertrinken.",
+      "en": "Both variables increase in summer. The common cause is temperature/season; ice cream sales do not cause drowning."
+    },
+    "source_url": "https://andreasrmadsen.medium.com/a-story-of-ice-cream-drowning-and-causal-modelling-fff3967f7671"
+  },
+  {
+    "id": 7,
+    "is_causal": false,
+    "statement": {
+      "de": "Länder mit höherem Schokoladenverbrauch haben mehr Nobelpreisträger, also macht Schokolade schlauer.",
+      "en": "Countries with higher chocolate consumption have more Nobel laureates, so chocolate makes you smarter."
+    },
+    "explanation": {
+      "de": "Beide hängen mit Wohlstand und Forschungskapazität zusammen. Schokoladenkonsum verursacht keine Nobelpreise.",
+      "en": "Both are linked to prosperity and research capacity. Chocolate consumption doesn’t cause Nobel prizes."
+    },
+    "source_url": "https://www.nejm.org/doi/abs/10.1056/NEJMon1211064"
+  },
+  {
+    "id": 8,
+    "is_causal": false,
+    "statement": {
+      "de": "Größere Schuhgrößen gehen mit besserer Lesefähigkeit einher.",
+      "en": "Larger shoe sizes are associated with better reading ability."
+    },
+    "explanation": {
+      "de": "Alter ist der versteckte Faktor: ältere Kinder haben größere Füße und lesen besser. Schuhgröße verursacht keine Lesefähigkeit.",
+      "en": "Age is the hidden factor: older children have bigger feet and read better. Shoe size doesn’t cause reading ability."
+    },
+    "source_url": "https://web.ma.utexas.edu/users/mks/statmistakes/causality.html"
+  },
+  {
+    "id": 9,
+    "is_causal": false,
+    "statement": {
+      "de": "Orte mit mehr Kirchen haben mehr Verbrechen.",
+      "en": "Places with more churches have more crime."
+    },
+    "explanation": {
+      "de": "Größere Städte haben mehr Kirchen und auch mehr Straftaten – die Bevölkerungsgröße ist der versteckte Faktor.",
+      "en": "Larger cities have more churches and more crimes – population size is the confounder."
+    },
+    "source_url": "https://en.wikipedia.org/wiki/Misuse_of_statistics"
+  },
+  {
+    "id": 10,
+    "is_causal": false,
+    "statement": {
+      "de": "Mehr Krankenhausbetten bedeuten mehr Krankheiten.",
+      "en": "More hospital beds mean more diseases."
+    },
+    "explanation": {
+      "de": "Regionen mit höherer Krankheitslast bauen mehr Betten. Bettenzahl ist ein Indikator, keine Ursache.",
+      "en": "Regions with higher disease burden build more beds. Bed numbers are an indicator, not a cause."
+    },
+    "source_url": "https://stats.stackexchange.com/questions/36/examples-for-teaching-correlation-does-not-mean-causation"
+  },
+  {
+    "id": 11,
+    "is_causal": true,
+    "statement": {
+      "de": "Infektion mit Helicobacter pylori verursacht Magengeschwüre und erhöht das Magenkrebsrisiko.",
+      "en": "Infection with Helicobacter pylori causes stomach ulcers and increases stomach cancer risk."
+    },
+    "explanation": {
+      "de": "Die Entdeckung von H. pylori zeigte, dass Bakterien Magengeschwüre verursachen können. Antibiotische Behandlung senkt Rückfälle.",
+      "en": "The discovery of H. pylori showed that bacteria can cause ulcers. Antibiotic treatment reduces relapses."
+    },
+    "source_url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736%2884%2991816-6/fulltext"
+  },
+  {
+    "id": 12,
+    "is_causal": true,
+    "statement": {
+      "de": "Die Umstellung auf Sommerzeit führt kurzfristig zu mehr Herzinfarkten.",
+      "en": "The switch to daylight saving time leads to a short-term rise in heart attacks."
+    },
+    "explanation": {
+      "de": "Schlafmangel und Störung des zirkadianen Rhythmus erhöhen kurzfristig das Herzinfarktrisiko.",
+      "en": "Sleep deprivation and disruption of circadian rhythm temporarily raise heart attack risk."
+    },
+    "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMc0807104"
+  },
+  {
+    "id": 13,
+    "is_causal": true,
+    "statement": {
+      "de": "Pränatale Hungerexposition erhöht das spätere Risiko für Stoffwechsel- und Herzkrankheiten.",
+      "en": "Prenatal famine exposure increases later risk of metabolic and cardiovascular disease."
+    },
+    "explanation": {
+      "de": "Unterernährung während der Schwangerschaft führt zu epigenetischen Veränderungen im Kind – erhöhter Krankheitsrisiko später.",
+      "en": "Malnutrition during pregnancy leads to epigenetic changes in the child – higher disease risk later in life."
+    },
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/11738798/"
+  },
+  {
+    "id": 14,
+    "is_causal": true,
+    "statement": {
+      "de": "Frühe Antibiotikagaben erhöhen das Risiko für Übergewicht im Kindesalter.",
+      "en": "Early antibiotic exposure increases the risk of childhood obesity."
+    },
+    "explanation": {
+      "de": "Antibiotika verändern das Mikrobiom und beeinflussen Energiehaushalt und Appetit.",
+      "en": "Antibiotics alter the microbiome and affect energy balance and appetite."
+    },
+    "source_url": "https://jamanetwork.com/journals/jamapediatrics/fullarticle/1909801"
+  },
+  {
+    "id": 15,
+    "is_causal": true,
+    "statement": {
+      "de": "Trinkwasser-Desinfektion reduziert Durchfallkrankheiten und Kindersterblichkeit drastisch.",
+      "en": "Drinking water disinfection drastically reduces diarrheal disease and child mortality."
+    },
+    "explanation": {
+      "de": "Chlorierung und Filtration verringern Infektionen signifikant – einer der größten Public-Health-Erfolge.",
+      "en": "Chlorination and filtration significantly reduce infections – one of the greatest public health successes."
+    },
+    "source_url": "https://www.thelancet.com/journals/langlo/article/PIIS2214-109X%2819%2930315-8/fulltext"
+  },
+  {
+    "id": 16,
+    "is_causal": true,
+    "statement": {
+      "de": "Rauchen verursacht Lungenkrebs.",
+      "en": "Smoking causes lung cancer."
+    },
+    "explanation": {
+      "de": "Eine der bestbelegten kausalen Beziehungen überhaupt: starke Dosis-Wirkungs-Beziehung zwischen Tabak und Krebs.",
+      "en": "One of the best-proven causal relationships: strong dose-response between tobacco and cancer."
+    },
+    "source_url": "https://www.bmj.com/content/2/4682/739"
+  },
+  {
+    "id": 17,
+    "is_causal": true,
+    "statement": {
+      "de": "Blei-Exposition in der Kindheit senkt den IQ langfristig.",
+      "en": "Lead exposure in childhood lowers IQ in the long term."
+    },
+    "explanation": {
+      "de": "Selbst geringe Bleibelastung führt zu messbaren kognitiven Einbußen.",
+      "en": "Even low lead exposure leads to measurable cognitive losses."
+    },
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1257652/"
+  },
+  {
+    "id": 18,
+    "is_causal": true,
+    "statement": {
+      "de": "Sicherheitsgurte reduzieren tödliche Verkehrsunfälle.",
+      "en": "Seatbelts reduce fatal car accidents."
+    },
+    "explanation": {
+      "de": "Mechanischer Schutzmechanismus mit klar messbarer Wirkung auf Todes- und Verletzungsrate.",
+      "en": "Mechanical protection mechanism with a clearly measurable effect on death and injury rates."
+    },
+    "source_url": "https://www.cdc.gov/seat-belts/facts/index.html"
+  },
+  {
+    "id": 19,
+    "is_causal": true,
+    "statement": {
+      "de": "Masern-Impfprogramme haben die Sterblichkeit massiv reduziert.",
+      "en": "Measles vaccination programs have drastically reduced mortality."
+    },
+    "explanation": {
+      "de": "WHO-Daten zeigen Millionen verhinderte Todesfälle durch Impfprogramme.",
+      "en": "WHO data show millions of deaths prevented by vaccination programs."
+    },
+    "source_url": "https://www.who.int/news-room/fact-sheets/detail/measles"
+  },
+  {
+    "id": 20,
+    "is_causal": false,
+    "statement": {
+      "de": "Mehr Schulsozialarbeiter verursachen mehr Mobbing (scheinbar).",
+      "en": "More school social workers cause more bullying (apparently)."
+    },
+    "explanation": {
+      "de": "Selektive Einstellung und erhöhte Meldungen erzeugen eine Scheinkorrelation.",
+      "en": "Selective hiring and increased reporting create a spurious correlation."
+    },
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7004015/"
+  }
+]
