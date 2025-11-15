@@ -105,7 +105,7 @@ const Statistics = () => {
           <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400">
             {t("statistics")}
           </h1>
-          <p className="text-2xl text-purple-200">Global Quiz Results</p>
+          <p className="text-2xl text-purple-200">{t("globalResults")}</p>
         </div>
 
         {stats && stats.totalAttempts > 0 ? (
@@ -145,7 +145,7 @@ const Statistics = () => {
             <div className="bg-purple-800/40 backdrop-blur-lg rounded-3xl p-8 border border-purple-500/30 shadow-2xl">
               <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
                 <Award className="w-8 h-8" />
-                Score Distribution
+                {t("scoreDistribution")}
               </h2>
 
               <div className="space-y-3">

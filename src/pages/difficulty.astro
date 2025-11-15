@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuestionDifficulty from "../components/QuestionDifficulty.jsx";
+import LanguageSwitcher from "../components/LanguageSwitcher.jsx";
+---
+
+<Layout title="Question Difficulty Analysis - Correlation vs Causation Quiz">
+    <LanguageSwitcher client:load />
+    <QuestionDifficulty client:load />
+</Layout>
+
+<script>
+    import "../utils/i18n.js";
+</script>
