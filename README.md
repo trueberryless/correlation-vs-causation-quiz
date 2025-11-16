@@ -98,7 +98,7 @@ An interactive quiz to test your ability to distinguish between correlation and 
 
 ## Constants
 
-- `MAX_ATTEMPTS = 7` - Maximum quiz attempts per device
+- `MAX_ATTEMPTS = 5` - Maximum quiz attempts per device
 - `MIN_CONFIDENCE = 50` - Minimum confidence level
 - `MAX_CONFIDENCE = 100` - Maximum confidence level
 

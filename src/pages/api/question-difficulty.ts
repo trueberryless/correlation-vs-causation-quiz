@@ -96,6 +96,7 @@ export const GET: APIRoute = async () => {
     allResults.forEach((result) => {
       result.answers.forEach((answer) => {
         const stats = questionStatsMap.get(answer.questionId);
+        // Obsolete questions can not be found anymore (deleted)
         if (stats) {
           stats.totalAttempts++;
           if (answer.correct) {
