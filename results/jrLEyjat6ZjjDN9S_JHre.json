@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2025-12-09T14:32:34.633Z",
+    "correct": 7,
+    "total": 10,
+    "percentage": 70,
+    "avgConfidence": 84.4,
+    "estimate": 7,
+    "answers": [
+      {
+        "questionId": 87,
+        "confidence": 100,
+        "correct": true
+      },
+      {
+        "questionId": 55,
+        "confidence": 100,
+        "correct": true
+      },
+      {
+        "questionId": 8,
+        "confidence": 100,
+        "correct": true
+      },
+      {
+        "questionId": 31,
+        "confidence": 72,
+        "correct": true
+      },
+      {
+        "questionId": 3,
+        "confidence": 92,
+        "correct": true
+      },
+      {
+        "questionId": 86,
+        "confidence": 50,
+        "correct": false
+      },
+      {
+        "questionId": 89,
+        "confidence": 75,
+        "correct": true
+      },
+      {
+        "questionId": 37,
+        "confidence": 72,
+        "correct": false
+      },
+      {
+        "questionId": 2,
+        "confidence": 100,
+        "correct": true
+      },
+      {
+        "questionId": 42,
+        "confidence": 83,
+        "correct": false
+      }
+    ]
+  }
+]
