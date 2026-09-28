@@ -15,6 +15,18 @@ const { title, description = "Test your ability to distinguish correlation from 
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Do you know the difference between correlation and causation? Take the quiz."
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Do you know the difference between correlation and causation? Take the quiz."
+    />
+    <meta property="og:image" content="https://correlation-vs-causation-quiz.felixs.dev/og.png" />
+    <meta property="og:image:alt" content="Do you know the difference between correlation and causation? Take the quiz." />
     <title>{title}</title>
   </head>
   <body>
