@@ -6,6 +6,7 @@ allowBuilds:
   sharp: false
   unrs-resolver: false
   protobufjs: false
+  vue-demi: true
 minimumReleaseAgeExclude:
   - '@vitest/coverage-v8@5.0.3'
   - '@vitest/mocker@5.0.3'
