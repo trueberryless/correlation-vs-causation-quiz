@@ -6,102 +6,69 @@ An interactive quiz to test your ability to distinguish between correlation and 
 
 ## Features
 
-- 🌐 Bilingual support (English & German) with i18next
-- 🎯 10 random questions (5 true, 5 false)
-- 📊 Confidence ratings for each answer (50-100%)
-- 🔄 Up to 3 attempts per user
-- 📈 Global statistics dashboard
-- 🔒 Secure server-side GitHub API integration
-- 💾 Local storage backup
-- ✨ Beautiful gradient UI with smooth animations
-- 📚 Educational content explaining correlation vs causation
+- English and German, with the language remembered in a cookie
+- 10 random questions per attempt (5 causal, 5 correlation)
+- A confidence rating (50-100 %) for every answer, which has to be set before answering
+- Up to 5 attempts per device
+- A statistics page with the global results and a difficulty analysis of every question
+- Results are stored locally and submitted to this repository through a server endpoint
 
-## Setup
+## How it works
 
-1. Clone the repository
-2. Install dependencies:
-```bash
-   npm install
+1. A visitor gets 10 random questions, 5 causal and 5 correlation ones, from `shared/data/questions.json`.
+2. For each question they set their confidence and choose "Causal relationship" or "Just correlation".
+3. After the last question they estimate how many answers were correct.
+4. The result is saved in the browser and sent to `POST /api/submit-results`. The endpoint appends it to `results/<anonymous id>.json` in a new branch and opens a pull request.
+5. `GET /api/get-stats` returns all results that were merged into the `results/` folder and `GET /api/question-difficulty` ranks the questions by their error rate, weighted by the number of attempts.
+
+## Development
+
+Requires Node.js 24 and pnpm.
+
+```shell
+pnpm install
+pnpm dev
 ```
 
-3. Create a `results/` folder in your GitHub repository
+Without a GitHub token the quiz works, the statistics are empty and submitting results fails (the quiz tells the visitor that the results were only saved locally).
 
-4. Create a `.env` file with your GitHub token:
-```
-   GITHUB_TOKEN=your_github_personal_access_token
-   PUBLIC_REPO_OWNER=trueberryless
-   PUBLIC_REPO_NAME=correlation-vs-causation-quiz
-```
+### Environment variables
 
-5. Run development server:
-```bash
-   npm run dev
+Create a `.env` file to try the submission:
+
+```
+GITHUB_TOKEN=a personal access token with the repo scope
+PUBLIC_REPO_OWNER=trueberryless
+PUBLIC_REPO_NAME=correlation-vs-causation-quiz
 ```
 
-6. Build for production:
-```bash
-   npm run build
+The token is only used on the server. Requests are validated with Zod: one result per request, an anonymous id of 10 to 40 characters (letters, digits, `_` and `-`) and the value ranges of the quiz.
+
+### Commands
+
+| Command             | Description                                     |
+| ------------------- | ----------------------------------------------- |
+| `pnpm check`        | Type check with `nuxt typecheck`                |
+| `pnpm lint`         | Lint with oxlint                                |
+| `pnpm format:check` | Check formatting with oxfmt                     |
+| `pnpm knip`         | Find unused files and dependencies              |
+| `pnpm test`         | Unit and component tests with Vitest            |
+| `pnpm test:e2e`     | Build, then run the Playwright end-to-end tests |
+
+## Project structure
+
 ```
-
-## GitHub Token Setup
-
-1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
-2. Generate new token with these scopes:
-   - `repo` (Full control of repositories)
-3. Add token to `.env` file (server-side only - NOT committed to git)
-
-## Security
-
-- ✅ GitHub token is stored server-side only
-- ✅ Client never has access to authentication credentials
-- ✅ All GitHub API calls go through secure server endpoints
-- ✅ Input validation on all API endpoints
-
-## How It Works
-
-1. Users get 10 random questions (5 causal, 5 correlation)
-2. **NEW:** Users must adjust confidence slider (50-100%) before answering
-3. After all questions, they estimate total correct answers
-4. Results are saved locally AND submitted via secure API
-5. Each device gets a unique anonymous ID
-6. Multiple attempts from same device are stored in one file
-7. Statistics page aggregates all results anonymously
-
-## Project Structure
+app/            pages, components and the quiz composable
+i18n/locales/   English and German messages
+server/api/     the three endpoints
+server/utils/   GitHub storage and request validation
+shared/         quiz and statistics logic, constants, questions
+results/        one JSON file per device (in the GitHub repository)
+test/           unit, component and end-to-end tests
 ```
-├── src/
-│   ├── components/
-│   │   ├── Quiz.jsx
-│   │   ├── Statistics.jsx
-│   │   └── LanguageSwitcher.jsx
-│   ├── data/
-│   │   └── questions.json
-│   ├── i18n/
-│   │   ├── en.json
-│   │   └── de.json
-│   ├── layouts/
-│   │   └── Layout.astro
-│   ├── pages/
-│   │   ├── index.astro
-│   │   ├── stats.astro
-│   │   └── api/
-│   │       ├── submit-results.ts
-│   │       └── get-stats.ts
-│   ├── utils/
-│   │   └── i18n.js
-│   └── constants.ts
-├── results/          (in GitHub repo)
-│   ├── .gitkeep
-│   └── {userId}.json (one file per device)
-└── README.md
-```
-
-## Constants
-
-- `MAX_ATTEMPTS = 5` - Maximum quiz attempts per device
-- `MIN_CONFIDENCE = 50` - Minimum confidence level
-- `MAX_CONFIDENCE = 100` - Maximum confidence level
 
 ## License
 
-MIT
+Licensed under the MIT license, Copyright © trueberryless.
+
+See [LICENSE](https://github.com/trueberryless/correlation-vs-causation-quiz/blob/main/LICENSE) for more information.
