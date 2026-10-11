@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@theme {
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+:root {
+  --ui-primary: var(--color-blue-700);
+}
+
+.dark {
+  --ui-primary: var(--color-blue-400);
+}
